@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, ... }:
 
 {
   home = {
@@ -21,5 +21,6 @@
     ./programs/fzf.nix
     ./programs/zoxide.nix
     ./programs/bat.nix
+    ./programs/polybar.nix
   ];
 }

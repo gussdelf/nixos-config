@@ -6,6 +6,10 @@
       nodePackages.vim-language-server
       nodePackages.pyright
       rnix-lsp
+
+      yarn
+      nodejs
+      deno
     ];
   };
 }

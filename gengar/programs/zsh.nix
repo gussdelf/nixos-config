@@ -16,7 +16,7 @@
     history = {
       ignoreDups = true;
       extended = true;
-      path = ".local/share/zsh/history";
+      path = "$HOME/.local/share/zsh/history";
     };
     plugins = [{
       name = "hlissner/zsh-autopair";
@@ -36,7 +36,7 @@
       CARGO_HOME = "$XDG_DATA_HOME/cargo";
       GTK_RC_FILES = "$XDG_CONFIG_HOME/gtk-1.0/gtkrc";
       GTK2_RC_FILES = "$XDG_CONFIG_HOME/gtk-2.0/gtkrc";
-      XAUTHORITY = "$XDG_RUNTIME_DIR/Xauthority";
+      XAUTHORITY = "$XDG_DATA_HOME/Xauthority";
       _Z_DATA = "$XDG_DATA_HOME/z";
       LESSKEY = "$XDG_CONFIG_HOME/less/lesskey";
       LESSHISTFILE = "$XDG_CACHE_HOME/less/history";
@@ -78,6 +78,7 @@
       la = "exa -s type -la --git --icons";
       lla = "exa -s type -la --git --icons";
       lsa = "exa -s type -a --git --icons";
+      hee = "home-manager edit";
       cmd = "command";
       doo = "doas";
       del = "doas rm -rf";
@@ -97,17 +98,17 @@
       psync = "nvim +PackerSync";
     };
     initExtra = ''
-        zstyle ':completion:*' menu select
-        _comp_options+=(globdots)
-        bindkey '^H' backward-delete-char
-        bindkey '^L' autosuggest-accept
-        bindkey '^K' up-line-or-history
-        bindkey '^J' down-line-or-history
-        bindkey '^O' fzf-cd-widget
+      zstyle ':completion:*' menu select
+      _comp_options+=(globdots)
+      bindkey '^H' backward-delete-char
+      bindkey '^L' autosuggest-accept
+      bindkey '^K' up-line-or-history
+      bindkey '^J' down-line-or-history
+      bindkey '^O' fzf-cd-widget
 
-        function etangle() {
-          emacs --batch --eval "(progn (require 'org) (setq org-confirm-babel-evaluate nil) (org-babel-tangle-file \"$1\"))"
-        }
+      function etangle() {
+        emacs --batch --eval "(progn (require 'org) (setq org-confirm-babel-evaluate nil) (org-babel-tangle-file \"$1\"))"
+      }
 
       function passs() {
         pass $1 | xclip -sel clip
@@ -115,14 +116,12 @@
 
       fuzzy-xdg-open() {
         local output
-          output=$(fzf --height 50% --reverse </dev/tty) && nvim ''${
-            (q-) output
-          }
+        output=$(fzf --height 50% --reverse </dev/tty) && $EDITOR ''${(q-)output}
         zle reset-prompt
       }
       zle -N fuzzy-xdg-open
 
-        bindkey '^F' fuzzy-xdg-open
+      bindkey '^F' fuzzy-xdg-open
     '';
   };
 }
