@@ -21,6 +21,6 @@
     ./programs/fzf.nix
     ./programs/zoxide.nix
     ./programs/bat.nix
-    ./programs/polybar.nix
+    # ./programs/polybar.nix
   ];
 }
