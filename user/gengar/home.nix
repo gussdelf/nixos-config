@@ -11,6 +11,14 @@
     home-manager.enable = true;
     htop.enable = true;
     mpv.enable = true;
+    firefox = {
+      enable = true;
+      extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+        ublock-origin
+        darkreader
+        vimium
+      ];
+    };
   };
 
   imports = [
@@ -21,6 +29,9 @@
     ./programs/fzf.nix
     ./programs/zoxide.nix
     ./programs/bat.nix
-    # ./programs/polybar.nix
+    ./programs/polybar.nix
+    ./programs/zathura.nix
+    ./programs/rofi.nix
+    ./programs/tmux.nix
   ];
 }

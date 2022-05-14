@@ -3,6 +3,13 @@
 {
   imports = [ /etc/nixos/hardware-configuration.nix ];
 
+  nix = {
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+    package = pkgs.nixFlakes;
+  };
+
   boot.loader = {
     grub.enable = true;
     grub.version = 2;
@@ -54,23 +61,16 @@
 
   users.users.gengar = {
     isNormalUser = true;
+    shell = pkgs.zsh;
+    home = "/home/gengar";
     extraGroups = [ "wheel" "audio" "adbusers" ];
   };
+
   security.sudo.wheelNeedsPassword = false;
-  users.users.gengar.shell = pkgs.zsh;
+
   programs.zsh.enableCompletion = true;
 
-  nix.extraOptions = ''
-    experimental-features = nix-command
-  '';
-
-  nixpkgs.overlays = [
-    (import ./overlay.nix)
-    (import (builtins.fetchTarball {
-      url =
-        "https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz";
-    }))
-  ];
+  nixpkgs.overlays = [ (import ./overlay.nix) ];
 
   environment = {
     pathsToLink = [ "/share/zsh" ];
@@ -80,61 +80,29 @@
       fish
       ripgrep
       sxhkd
-      polybar
       fd
-      fzf
       go
-      gopls
-      sumneko-lua-language-server
       brave
-      firefox
-      exa
-      starship
-      lazygit
-      git
-      github-cli
-      stow
-      neofetch
       python3
       unzip
       tmux
       rsync
-      picom
       curl
       wget
       xclip
-      scrcpy
       feh
       sxiv
-      zoxide
       gcc
       clang
       clang-tools
       binutils
       gnumake
-      lxappearance
-      capitaine-cursors
-      tdesktop
       flameshot
-      rofi
-      htop
-      shfmt
-      stylua
       nixfmt
-      ytfzf
-      mpv
-      shellcheck
       st-guss
       dmenu-guss
       rustup
       rust-analyzer
-      zathura
-      bitwarden
-      catgirl
-      deno
-      yarn
-      neovim-nightly
-      cmus
     ];
   };
   virtualisation.podman.enable = true;
