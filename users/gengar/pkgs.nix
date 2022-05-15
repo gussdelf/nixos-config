@@ -18,6 +18,8 @@
       nodejs
       deno
 
+      cmus
+
       st-guss
       dmenu-guss
       neovim-nightly

@@ -14,13 +14,14 @@
   };
 
   imports = [
-    ./pkgs.nix
+    ./pkgs.nix 
     ./programs/starship.nix
     ./programs/git.nix
     ./programs/zsh.nix
     ./programs/fzf.nix
     ./programs/zoxide.nix
     ./programs/bat.nix
-    # ./programs/polybar.nix
+    ./programs/polybar.nix
   ];
+
 }

@@ -20,11 +20,20 @@
         joypixels.acceptLicense = true;
       };
 
-      overlays = with inputs; [ neovim-nightly.overlay ];
+      overlays = with inputs; [
+        (final: _:
+          let inherit (final) system;
+          in {
+            neovim-nigthly = neovim.packages."${system}".neovim;
+            unstable = import unstable { inherit system config; };
+          })
+        neovim-nightly.overlay
+      ];
 
     in {
       nixosConfigurations = {
-        boo = import ./host { inherit system nixpkgs home inputs config overlays; };
+        boo =
+          import ./host { inherit system nixpkgs home inputs config overlays; };
       };
 
       homeConfigurations = {
