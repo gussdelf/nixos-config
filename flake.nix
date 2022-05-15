@@ -1,50 +1,38 @@
 {
-  description = "My config of balacobaco";
+  description = "My flake of balacobaco";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.follows = "unstable";
 
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
-    nur.url = "github:nix-community/nur";
-    nur.inputs.nixpkgs.follows = "nixpkgs";
+    home.url = "github:nix-community/home-manager";
+    home.inputs.nixpkgs.follows = "nixpkgs";
 
     neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
     neovim-nightly.inputs.nixpkgs.follows = "nixpkgs";
-
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, home, ... }@inputs:
+    with nixpkgs.lib;
     let
-      system = "x86_64-linux";
-
-      pkgs = import nixpkgs {
-        inherit system;
-        config = {
-          allowUnfree = true;
-          joypixels.acceptLicense = true;
-        };
+      config = {
+        allowUnfree = true;
+        joypixels.acceptLicense = true;
       };
 
-      lib = nixpkgs.lib;
       overlays = with inputs; [ neovim-nightly.overlay ];
 
     in {
       nixosConfigurations = {
-        boo = lib.nixosSystem {
-          inherit system;
-          modules = [ ./system/configuration.nix ];
+        boo = import ./host { inherit system nixpkgs home inputs config overlays; };
+      };
+
+      homeConfigurations = {
+        gengar = import ./users/gengar {
+          inherit config nixpkgs home overlays inputs;
         };
       };
 
-      homeManagerConfigurations = {
-        gengar = home-manager.lib.homeManagerConfiguration {
-          inherit system pkgs;
-          username = "gengar";
-          homeDirectory = "/home/gengar";
-          configuration = { imports = [ ./user/gengar/home.nix ]; };
-        };
-      };
+      boo = self.nixosConfigurations.boo.config.system.build.toplevel;
     };
 }

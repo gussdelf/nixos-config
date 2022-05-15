@@ -1,7 +1,7 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
-  imports = [ /etc/nixos/hardware-configuration.nix ];
+  imports = [ ./hardware-configuration.nix ];
 
   nix = {
     extraOptions = ''
@@ -10,10 +10,10 @@
     package = pkgs.nixFlakes;
   };
 
-  boot.loader = {
-    grub.enable = true;
-    grub.version = 2;
-    grub.device = "/dev/sda";
+  boot.loader.grub = {
+    enable = true;
+    version = 2;
+    device = "/dev/sda";
   };
 
   time.timeZone = "America/Sao_Paulo";
@@ -27,8 +27,6 @@
 
   i18n.defaultLocale = "pt_BR.UTF-8";
   console = { keyMap = "br-abnt2"; };
-
-  nixpkgs.config.allowUnfree = true;
 
   hardware.opengl = {
     enable = true;
@@ -51,7 +49,6 @@
     material-design-icons
     font-awesome
   ];
-  nixpkgs.config.joypixels.acceptLicense = true;
 
   sound.enable = true;
   hardware.pulseaudio.enable = true;
@@ -69,8 +66,6 @@
   security.sudo.wheelNeedsPassword = false;
 
   programs.zsh.enableCompletion = true;
-
-  nixpkgs.overlays = [ (import ./overlay.nix) ];
 
   environment = {
     pathsToLink = [ "/share/zsh" ];
@@ -97,15 +92,12 @@
       clang-tools
       binutils
       gnumake
-      flameshot
       nixfmt
-      st-guss
-      dmenu-guss
       rustup
-      rust-analyzer
     ];
   };
+
   virtualisation.podman.enable = true;
 
-  system.stateVersion = "21.11";
+  system.stateVersion = "22.05";
 }
