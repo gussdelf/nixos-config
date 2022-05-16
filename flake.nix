@@ -10,6 +10,8 @@
 
     neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
     neovim-nightly.inputs.nixpkgs.follows = "nixpkgs";
+
+    nur.url = "github:nix-community/NUR";
   };
 
   outputs = { self, nixpkgs, home, ... }@inputs:
@@ -18,19 +20,23 @@
       config = {
         allowUnfree = true;
         joypixels.acceptLicense = true;
+        pulseaudio = true;
       };
 
       overlays = with inputs; [
         (final: _:
           let inherit (final) system;
-          in {
+          in
+          {
             neovim-nigthly = neovim.packages."${system}".neovim;
             unstable = import unstable { inherit system config; };
           })
         neovim-nightly.overlay
+        nur.overlay
       ];
 
-    in {
+    in
+    {
       nixosConfigurations = {
         boo =
           import ./host { inherit system nixpkgs home inputs config overlays; };
