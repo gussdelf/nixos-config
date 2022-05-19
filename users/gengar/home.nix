@@ -22,6 +22,7 @@
     ".config/xrdb".source = ./config/xrdb;
     ".config/rofi".source = ./config/rofi;
     ".config/zathura".source = ./config/zathura;
+    ".config/polybar".source = ./config/polybar;
   };
 
   imports = [

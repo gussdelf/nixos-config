@@ -52,7 +52,6 @@
 
   sound.enable = true;
   hardware.pulseaudio.enable = true;
-  nixpkgs.config.pulseaudio = true;
 
   programs.adb.enable = true;
 
@@ -94,6 +93,7 @@
       gnumake
       nixfmt
       rustup
+      polybar
     ];
   };
 
