@@ -43,15 +43,17 @@
       ytfzf
       tdesktop
       bitwarden
+      glow
 
       lxappearance
       capitaine-cursors
 
       st-guss
       dmenu-guss
+      rofi
+
       neovim-nightly
       helix
-      rofi
 
     ];
   };
