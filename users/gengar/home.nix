@@ -9,28 +9,19 @@
     htop.enable = true;
     mpv.enable = true;
     exa.enable = true;
+    zathura.enable = true;
+    rofi.enable = true;
+  };
 
-    firefox = {
-      enable = true;
-
-      extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-        ublock-origin
-        stylus
-        vimium
-        darkreader
-      ];
-
-      profiles = {
-        myprofile = {
-          id = 0;
-          settings = { "general.smoothScroll" = true; };
-          extraConfig = ''
-            user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
-            user_pref("full-screen-api.ignore-widgets", true);
-          '';
-        };
-      };
-    };
+  home.file = {
+    ".config/nvim".source = ./config/nvim;
+    ".config/tmux".source = ./config/tmux;
+    ".config/doom".source = ./config/doom;
+    ".config/sxhkd".source = ./config/sxhkd;
+    ".config/bspwm".source = ./config/bpswm;
+    ".config/xrdb".source = ./config/xrdb;
+    ".config/rofi".source = ./config/rofi;
+    ".config/zathura".source = ./config/zathura;
   };
 
   imports = [
@@ -41,7 +32,8 @@
     ./programs/fzf.nix
     ./programs/zoxide.nix
     ./programs/bat.nix
-    # ./programs/polybar.nix
+    ./programs/helix.nix
+    ./programs/firefox/default.nix
   ];
 
 }

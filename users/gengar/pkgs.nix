@@ -50,6 +50,7 @@
       st-guss
       dmenu-guss
       neovim-nightly
+      helix
       rofi
 
     ];
