@@ -18,7 +18,7 @@
     ".config/tmux".source = ./config/tmux;
     ".config/doom".source = ./config/doom;
     ".config/sxhkd".source = ./config/sxhkd;
-    ".config/bspwm".source = ./config/bpswm;
+    ".config/bspwm".source = ./config/bspwm;
     ".config/xrdb".source = ./config/xrdb;
     ".config/rofi".source = ./config/rofi;
     ".config/zathura".source = ./config/zathura;
