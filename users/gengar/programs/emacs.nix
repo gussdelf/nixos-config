@@ -1,4 +1,5 @@
 { config, pkgs, ... }: {
+  home.file.".config/emacs".source = ../config/emacs;
   programs.emacs = {
     enable = true;
     extraPackages = epkgs: [
