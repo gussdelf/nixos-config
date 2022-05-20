@@ -34,6 +34,7 @@
     ./programs/zoxide.nix
     ./programs/bat.nix
     ./programs/helix.nix
+    ./programs/emacs.nix
     ./programs/firefox/default.nix
   ];
 
