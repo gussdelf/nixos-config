@@ -14,6 +14,7 @@
   };
 
   home.file = {
+    # Some raw configs
     ".config/nvim".source = ./config/nvim;
     ".config/tmux".source = ./config/tmux;
     ".config/doom".source = ./config/doom;
@@ -23,6 +24,9 @@
     ".config/rofi".source = ./config/rofi;
     ".config/zathura".source = ./config/zathura;
     ".config/polybar".source = ./config/polybar;
+    
+    # Wallpapers
+    "Imgs/wallpapers".source = ./wallpapers;
   };
 
   imports = [

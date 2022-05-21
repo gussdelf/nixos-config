@@ -36,7 +36,6 @@
       CARGO_HOME = "$XDG_DATA_HOME/cargo";
       GTK_RC_FILES = "$XDG_CONFIG_HOME/gtk-1.0/gtkrc";
       GTK2_RC_FILES = "$XDG_CONFIG_HOME/gtk-2.0/gtkrc";
-      # XAUTHORITY = "$XDG_DATA_HOME/Xauthority";
       _Z_DATA = "$XDG_DATA_HOME/z";
       LESSKEY = "$XDG_CONFIG_HOME/less/lesskey";
       LESSHISTFILE = "$XDG_CACHE_HOME/less/history";
@@ -91,6 +90,7 @@
       mutt = "neomutt";
       magit = ''emacsclient -nc -e "(magit-status)"'';
       mkdir = "mkdir -p";
+      flake = "nix flake";
       server = "python -m http.server";
       bspwm = "startx ~/.config/X11/bspwm";
       awesomewm = "startx ~/.config/X11/awesome";
