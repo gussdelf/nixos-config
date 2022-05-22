@@ -96,6 +96,7 @@
           source (fzf-share)/key-bindings.fish
         end
       
+        fish_vi_key_bindings --no-erase
         fzf_key_bindings
         bind -M insert \cl forward-word
       end
@@ -159,6 +160,17 @@
           repo = "plugin-license";
           rev = "0155b16f102957ec0c734a90979245dc1073f979";
           sha256 = "Bi9Q5rekZoyXYbRV+U4SmwCdqCl0pFupzm5si7SxFns=";
+        };
+      }
+
+      # For plugins I can't install here
+      {
+        name = "fisher";
+        src = pkgs.fetchFromGitHub {
+          owner = "jorgebucaran";
+          repo = "fisher";
+          rev = "a4e74bd6f1dfc7420afd1f7f8d6d8fa450339084";
+          sha256 = "P9V8bd2c9Gu8mC7RFdmQMuXPrWfhyNDZEEf7Ui5n5kc=";
         };
       }
     ];
