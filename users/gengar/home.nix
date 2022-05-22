@@ -34,6 +34,7 @@
     ./programs/starship.nix
     ./programs/git.nix
     ./programs/zsh.nix
+    ./programs/fish.nix
     ./programs/fzf.nix
     ./programs/zoxide.nix
     ./programs/bat.nix

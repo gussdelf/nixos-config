@@ -29,6 +29,8 @@
       nodePackages.pyright
       sumneko-lua-language-server
       rnix-lsp
+      
+      jq
 
       shfmt
       shellcheck
@@ -55,6 +57,7 @@
       neovim-nightly
       helix
 
+      nix-prefetch-github
     ];
   };
 }
