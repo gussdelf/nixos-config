@@ -59,6 +59,7 @@
       ASDF_DATA_DIR = "$XDG_DATA_HOME/asdf";
       ASDF_CONFIG_FILE = "$XDG_CONFIG_HOME/config/asdf/asdfrc";
       WLR_NO_HARDWARE_CURSORS = 1;
+      KEYTIMEOUT = 1;
     };
     shellAliases = {
       c = "clear;";
