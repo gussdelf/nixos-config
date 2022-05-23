@@ -99,7 +99,7 @@ _G.packer_plugins = {
     url = "https://github.com/akinsho/bufferline.nvim"
   },
   ["cmp-buffer"] = {
-    after = { "cmp-tmux", "cmp-path" },
+    after = { "cmp-path", "cmp-tmux" },
     after_files = { "/home/gengar/.local/share/nvim/site/pack/packer/opt/cmp-buffer/after/plugin/cmp_buffer.lua" },
     load_after = {
       ["cmp-nvim-lsp-signature-help"] = true
@@ -111,7 +111,7 @@ _G.packer_plugins = {
     url = "https://github.com/hrsh7th/cmp-buffer"
   },
   ["cmp-nvim-lsp"] = {
-    after = { "cmp-nvim-lsp-signature-help", "cmp-tabnine" },
+    after = { "cmp-tabnine", "cmp-nvim-lsp-signature-help" },
     after_files = { "/home/gengar/.local/share/nvim/site/pack/packer/opt/cmp-nvim-lsp/after/plugin/cmp_nvim_lsp.lua" },
     load_after = {
       ["cmp-nvim-lua"] = true
@@ -225,17 +225,6 @@ _G.packer_plugins = {
     only_cond = false,
     path = "/home/gengar/.local/share/nvim/site/pack/packer/opt/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
-  },
-  ["go.nvim"] = {
-    config = { "\27LJ\2\nD\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\ago\30plugins.configs.lspconfig\frequire\0" },
-    load_after = {
-      ["nvim-lspconfig"] = true
-    },
-    loaded = false,
-    needs_bufread = true,
-    only_cond = false,
-    path = "/home/gengar/.local/share/nvim/site/pack/packer/opt/go.nvim",
-    url = "https://github.com/ray-x/go.nvim"
   },
   ["gruvbox-material"] = {
     after = { "feline.nvim", "nvim-web-devicons" },
@@ -363,7 +352,7 @@ _G.packer_plugins = {
     url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
   ["numb.nvim"] = {
-    config = { "\27LJ\2\ne\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3\16number_only\1\20show_cursorline\2\17show_numbers\2\nsetup\tnumb\frequire\0" },
+    config = { "\27LJ\2\ne\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3\17show_numbers\2\16number_only\1\20show_cursorline\2\nsetup\tnumb\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -389,7 +378,7 @@ _G.packer_plugins = {
     url = "https://github.com/kevinhwang91/nvim-bqf"
   },
   ["nvim-cmp"] = {
-    after = { "LuaSnip", "nvim-autopairs" },
+    after = { "nvim-autopairs", "LuaSnip" },
     config = { "\27LJ\2\n3\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\24plugins.configs.cmp\frequire\0" },
     loaded = false,
     needs_bufread = false,
@@ -422,7 +411,7 @@ _G.packer_plugins = {
     url = "https://github.com/rcarriga/nvim-dap-ui"
   },
   ["nvim-lspconfig"] = {
-    after = { "rust-tools.nvim", "go.nvim", "lsp_signature.nvim", "navigator.lua", "trouble.nvim" },
+    after = { "lsp_signature.nvim", "trouble.nvim", "navigator.lua", "rust-tools.nvim" },
     config = { "\27LJ\2\n9\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\30plugins.configs.lspconfig\frequire\0" },
     loaded = false,
     needs_bufread = false,
@@ -431,7 +420,7 @@ _G.packer_plugins = {
     url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-treesitter"] = {
-    after = { "playground", "nvim-ts-rainbow", "tabout.nvim", "nvim-treesitter-textobjects", "nvim-ts-autotag", "hlargs.nvim" },
+    after = { "nvim-treesitter-textobjects", "playground", "nvim-ts-rainbow", "nvim-ts-autotag", "hlargs.nvim", "tabout.nvim" },
     config = { "\27LJ\2\n:\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\31plugins.configs.treesitter\frequire\0" },
     loaded = false,
     needs_bufread = false,
@@ -510,7 +499,7 @@ _G.packer_plugins = {
     url = "https://github.com/simrat39/rust-tools.nvim"
   },
   ["tabout.nvim"] = {
-    config = { "\27LJ\2\nY\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\2\15completion\1\21ignore_beginning\1\nsetup\vtabout\frequire\0" },
+    config = { "\27LJ\2\nY\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\2\21ignore_beginning\1\15completion\1\nsetup\vtabout\frequire\0" },
     load_after = {
       ["nvim-treesitter"] = true
     },
@@ -663,14 +652,14 @@ end
 time([[Setup for zen-mode.nvim]], true)
 try_loadstring("\27LJ\2\nc\0\0\6\0\a\0\t6\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\4\0'\4\5\0005\5\6\0B\0\5\1K\0\1\0\1\0\1\vsilent\2\21<cmd>ZenMode<cr>\15<leader>tz\6n\bset\vkeymap\bvim\0", "setup", "zen-mode.nvim")
 time([[Setup for zen-mode.nvim]], false)
--- Config for: nvim-colorizer.lua
-time([[Config for nvim-colorizer.lua]], true)
-try_loadstring("\27LJ\2\nH\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\14colorizer\27plugins.configs.others\frequire\0", "config", "nvim-colorizer.lua")
-time([[Config for nvim-colorizer.lua]], false)
 -- Config for: impatient.nvim
 time([[Config for impatient.nvim]], true)
 try_loadstring("\27LJ\2\n)\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\14impatient\frequire\0", "config", "impatient.nvim")
 time([[Config for impatient.nvim]], false)
+-- Config for: nvim-colorizer.lua
+time([[Config for nvim-colorizer.lua]], true)
+try_loadstring("\27LJ\2\nH\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\14colorizer\27plugins.configs.others\frequire\0", "config", "nvim-colorizer.lua")
+time([[Config for nvim-colorizer.lua]], false)
 -- Config for: vim-fugitive
 time([[Config for vim-fugitive]], true)
 try_loadstring("\27LJ\2\nG\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\rfugitive\27plugins.configs.others\frequire\0", "config", "vim-fugitive")
@@ -682,69 +671,66 @@ time([[Config for Comment.nvim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file UndotreeToggle lua require("packer.load")({'undotree'}, { cmd = "UndotreeToggle", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file ZenMode lua require("packer.load")({'zen-mode.nvim'}, { cmd = "ZenMode", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file TSPlaygroundToggle lua require("packer.load")({'playground'}, { cmd = "TSPlaygroundToggle", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file TSHighlightCapturesUnderCursor lua require("packer.load")({'playground'}, { cmd = "TSHighlightCapturesUnderCursor", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file TSPlaygroundToggle lua require("packer.load")({'playground'}, { cmd = "TSPlaygroundToggle", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file ZenMode lua require("packer.load")({'zen-mode.nvim'}, { cmd = "ZenMode", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file UndotreeToggle lua require("packer.load")({'undotree'}, { cmd = "UndotreeToggle", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 time([[Defining lazy-load commands]], false)
 
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
-vim.cmd [[au FileType sh ++once lua require("packer.load")({'LuaSnip', 'cmp-nvim-lua', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help', 'cmp-buffer', 'nvim-lspconfig', 'lsp_signature.nvim', 'nvim-dap', 'nvim-treesitter', 'navigator.lua', 'cmp-tmux', 'cmp-path', 'friendly-snippets', 'cmp-tabnine', 'cmp_luasnip', 'nvim-autopairs', 'hlargs.nvim', 'nvim-cmp', 'nvim-dap-ui'}, { ft = "sh" }, _G.packer_plugins)]]
-vim.cmd [[au FileType vue ++once lua require("packer.load")({'nvim-ts-autotag', 'LuaSnip', 'cmp-nvim-lua', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help', 'cmp-buffer', 'nvim-lspconfig', 'lsp_signature.nvim', 'nvim-dap', 'nvim-treesitter', 'navigator.lua', 'cmp-tmux', 'cmp-path', 'friendly-snippets', 'cmp-tabnine', 'cmp_luasnip', 'nvim-autopairs', 'hlargs.nvim', 'nvim-cmp', 'nvim-dap-ui'}, { ft = "vue" }, _G.packer_plugins)]]
-vim.cmd [[au FileType java ++once lua require("packer.load")({'LuaSnip', 'cmp-nvim-lua', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help', 'cmp-buffer', 'nvim-lspconfig', 'lsp_signature.nvim', 'nvim-dap', 'nvim-treesitter', 'navigator.lua', 'cmp-tmux', 'cmp-path', 'friendly-snippets', 'cmp-tabnine', 'cmp_luasnip', 'nvim-autopairs', 'hlargs.nvim', 'nvim-cmp', 'nvim-dap-ui'}, { ft = "java" }, _G.packer_plugins)]]
-vim.cmd [[au FileType ruby ++once lua require("packer.load")({'LuaSnip', 'cmp-nvim-lua', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help', 'cmp-buffer', 'nvim-lspconfig', 'lsp_signature.nvim', 'nvim-dap', 'nvim-treesitter', 'navigator.lua', 'cmp-tmux', 'cmp-path', 'friendly-snippets', 'cmp-tabnine', 'cmp_luasnip', 'nvim-autopairs', 'hlargs.nvim', 'nvim-cmp', 'nvim-dap-ui'}, { ft = "ruby" }, _G.packer_plugins)]]
-vim.cmd [[au FileType python ++once lua require("packer.load")({'LuaSnip', 'cmp-nvim-lua', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help', 'cmp-buffer', 'nvim-lspconfig', 'lsp_signature.nvim', 'nvim-dap', 'nvim-treesitter', 'navigator.lua', 'cmp-tmux', 'cmp-path', 'friendly-snippets', 'cmp-tabnine', 'cmp_luasnip', 'nvim-autopairs', 'hlargs.nvim', 'nvim-cmp', 'nvim-dap-ui'}, { ft = "python" }, _G.packer_plugins)]]
-vim.cmd [[au FileType julia ++once lua require("packer.load")({'LuaSnip', 'cmp-nvim-lua', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help', 'cmp-buffer', 'nvim-lspconfig', 'lsp_signature.nvim', 'nvim-dap', 'nvim-treesitter', 'navigator.lua', 'cmp-tmux', 'cmp-path', 'friendly-snippets', 'cmp-tabnine', 'cmp_luasnip', 'nvim-autopairs', 'hlargs.nvim', 'nvim-cmp', 'nvim-dap-ui'}, { ft = "julia" }, _G.packer_plugins)]]
-vim.cmd [[au FileType nix ++once lua require("packer.load")({'LuaSnip', 'cmp-nvim-lua', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help', 'cmp-buffer', 'nvim-lspconfig', 'lsp_signature.nvim', 'nvim-dap', 'nvim-treesitter', 'navigator.lua', 'cmp-tmux', 'cmp-path', 'friendly-snippets', 'cmp-tabnine', 'cmp_luasnip', 'nvim-autopairs', 'hlargs.nvim', 'nvim-cmp', 'nvim-dap-ui'}, { ft = "nix" }, _G.packer_plugins)]]
-vim.cmd [[au FileType yaml ++once lua require("packer.load")({'nvim-treesitter', 'nvim-autopairs', 'hlargs.nvim'}, { ft = "yaml" }, _G.packer_plugins)]]
-vim.cmd [[au FileType cmake ++once lua require("packer.load")({'nvim-treesitter', 'nvim-autopairs', 'hlargs.nvim'}, { ft = "cmake" }, _G.packer_plugins)]]
-vim.cmd [[au FileType toml ++once lua require("packer.load")({'nvim-treesitter', 'nvim-autopairs', 'hlargs.nvim'}, { ft = "toml" }, _G.packer_plugins)]]
-vim.cmd [[au FileType lisp ++once lua require("packer.load")({'LuaSnip', 'cmp-nvim-lua', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help', 'cmp-buffer', 'nvim-lspconfig', 'lsp_signature.nvim', 'nvim-dap', 'nvim-treesitter', 'navigator.lua', 'cmp-tmux', 'cmp-path', 'friendly-snippets', 'cmp-tabnine', 'cmp_luasnip', 'nvim-autopairs', 'hlargs.nvim', 'nvim-cmp', 'nvim-dap-ui'}, { ft = "lisp" }, _G.packer_plugins)]]
-vim.cmd [[au FileType c ++once lua require("packer.load")({'LuaSnip', 'cmp-nvim-lua', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help', 'cmp-buffer', 'nvim-lspconfig', 'lsp_signature.nvim', 'nvim-dap', 'nvim-treesitter', 'navigator.lua', 'cmp-tmux', 'cmp-path', 'friendly-snippets', 'cmp-tabnine', 'cmp_luasnip', 'nvim-autopairs', 'hlargs.nvim', 'nvim-cmp', 'nvim-dap-ui'}, { ft = "c" }, _G.packer_plugins)]]
-vim.cmd [[au FileType gomod ++once lua require("packer.load")({'nvim-treesitter', 'nvim-autopairs', 'hlargs.nvim'}, { ft = "gomod" }, _G.packer_plugins)]]
-vim.cmd [[au FileType fish ++once lua require("packer.load")({'nvim-treesitter', 'nvim-autopairs', 'hlargs.nvim'}, { ft = "fish" }, _G.packer_plugins)]]
-vim.cmd [[au FileType tex ++once lua require("packer.load")({'LuaSnip', 'cmp-nvim-lua', 'vimtex', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help', 'cmp-buffer', 'nvim-lspconfig', 'lsp_signature.nvim', 'nvim-dap', 'nabla.nvim', 'nvim-treesitter', 'navigator.lua', 'cmp-tmux', 'cmp-path', 'friendly-snippets', 'cmp-tabnine', 'cmp_luasnip', 'nvim-autopairs', 'hlargs.nvim', 'nvim-cmp', 'nvim-dap-ui'}, { ft = "tex" }, _G.packer_plugins)]]
-vim.cmd [[au FileType fennel ++once lua require("packer.load")({'nvim-treesitter', 'nvim-autopairs', 'hlargs.nvim'}, { ft = "fennel" }, _G.packer_plugins)]]
-vim.cmd [[au FileType json ++once lua require("packer.load")({'nvim-treesitter', 'nvim-autopairs', 'hlargs.nvim'}, { ft = "json" }, _G.packer_plugins)]]
-vim.cmd [[au FileType vim ++once lua require("packer.load")({'LuaSnip', 'cmp-nvim-lua', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help', 'cmp-buffer', 'nvim-lspconfig', 'lsp_signature.nvim', 'nvim-dap', 'nvim-treesitter', 'navigator.lua', 'cmp-tmux', 'cmp-path', 'friendly-snippets', 'cmp-tabnine', 'cmp_luasnip', 'nvim-autopairs', 'hlargs.nvim', 'nvim-cmp', 'nvim-dap-ui'}, { ft = "vim" }, _G.packer_plugins)]]
-vim.cmd [[au FileType javascriptreact ++once lua require("packer.load")({'nvim-ts-autotag', 'LuaSnip', 'cmp-nvim-lua', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help', 'cmp-buffer', 'nvim-lspconfig', 'lsp_signature.nvim', 'nvim-dap', 'nvim-treesitter', 'navigator.lua', 'cmp-tmux', 'cmp-path', 'friendly-snippets', 'cmp-tabnine', 'cmp_luasnip', 'nvim-autopairs', 'hlargs.nvim', 'nvim-cmp', 'nvim-dap-ui'}, { ft = "javascriptreact" }, _G.packer_plugins)]]
-vim.cmd [[au FileType typescript ++once lua require("packer.load")({'nvim-ts-autotag', 'LuaSnip', 'cmp-nvim-lua', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help', 'cmp-buffer', 'nvim-lspconfig', 'lsp_signature.nvim', 'nvim-dap', 'nvim-treesitter', 'navigator.lua', 'cmp-tmux', 'cmp-path', 'friendly-snippets', 'cmp-tabnine', 'cmp_luasnip', 'nvim-autopairs', 'hlargs.nvim', 'nvim-cmp', 'nvim-dap-ui'}, { ft = "typescript" }, _G.packer_plugins)]]
-vim.cmd [[au FileType typescriptreact ++once lua require("packer.load")({'nvim-ts-autotag', 'LuaSnip', 'cmp-nvim-lua', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help', 'cmp-buffer', 'nvim-lspconfig', 'lsp_signature.nvim', 'nvim-dap', 'nvim-treesitter', 'navigator.lua', 'cmp-tmux', 'cmp-path', 'friendly-snippets', 'cmp-tabnine', 'cmp_luasnip', 'nvim-autopairs', 'hlargs.nvim', 'nvim-cmp', 'nvim-dap-ui'}, { ft = "typescriptreact" }, _G.packer_plugins)]]
-vim.cmd [[au FileType make ++once lua require("packer.load")({'nvim-treesitter', 'nvim-autopairs', 'hlargs.nvim'}, { ft = "make" }, _G.packer_plugins)]]
-vim.cmd [[au FileType cpp ++once lua require("packer.load")({'LuaSnip', 'cmp-nvim-lua', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help', 'cmp-buffer', 'nvim-lspconfig', 'lsp_signature.nvim', 'nvim-dap', 'nvim-treesitter', 'navigator.lua', 'cmp-tmux', 'cmp-path', 'friendly-snippets', 'cmp-tabnine', 'cmp_luasnip', 'nvim-autopairs', 'hlargs.nvim', 'nvim-cmp', 'nvim-dap-ui'}, { ft = "cpp" }, _G.packer_plugins)]]
-vim.cmd [[au FileType rust ++once lua require("packer.load")({'rust-tools.nvim', 'LuaSnip', 'cmp-nvim-lua', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help', 'cmp-buffer', 'nvim-lspconfig', 'lsp_signature.nvim', 'nvim-dap', 'nvim-treesitter', 'navigator.lua', 'cmp-tmux', 'cmp-path', 'friendly-snippets', 'cmp-tabnine', 'cmp_luasnip', 'nvim-autopairs', 'hlargs.nvim', 'nvim-cmp', 'nvim-dap-ui'}, { ft = "rust" }, _G.packer_plugins)]]
-vim.cmd [[au FileType bash ++once lua require("packer.load")({'LuaSnip', 'cmp-nvim-lua', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help', 'cmp-buffer', 'nvim-lspconfig', 'lsp_signature.nvim', 'nvim-dap', 'nvim-treesitter', 'navigator.lua', 'cmp-tmux', 'cmp-path', 'friendly-snippets', 'cmp-tabnine', 'cmp_luasnip', 'nvim-autopairs', 'hlargs.nvim', 'nvim-cmp', 'nvim-dap-ui'}, { ft = "bash" }, _G.packer_plugins)]]
-vim.cmd [[au FileType zsh ++once lua require("packer.load")({'LuaSnip', 'cmp-nvim-lua', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help', 'cmp-buffer', 'nvim-lspconfig', 'lsp_signature.nvim', 'nvim-dap', 'nvim-treesitter', 'navigator.lua', 'cmp-tmux', 'cmp-path', 'friendly-snippets', 'cmp-tabnine', 'cmp_luasnip', 'nvim-autopairs', 'hlargs.nvim', 'nvim-cmp', 'nvim-dap-ui'}, { ft = "zsh" }, _G.packer_plugins)]]
-vim.cmd [[au FileType html ++once lua require("packer.load")({'nvim-ts-autotag', 'LuaSnip', 'cmp-nvim-lua', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help', 'cmp-buffer', 'nvim-lspconfig', 'lsp_signature.nvim', 'nvim-dap', 'nvim-treesitter', 'navigator.lua', 'cmp-tmux', 'cmp-path', 'friendly-snippets', 'cmp-tabnine', 'cmp_luasnip', 'nvim-autopairs', 'hlargs.nvim', 'nvim-cmp', 'nvim-dap-ui'}, { ft = "html" }, _G.packer_plugins)]]
-vim.cmd [[au FileType php ++once lua require("packer.load")({'LuaSnip', 'cmp-nvim-lua', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help', 'cmp-buffer', 'nvim-lspconfig', 'lsp_signature.nvim', 'nvim-dap', 'nvim-treesitter', 'navigator.lua', 'cmp-tmux', 'cmp-path', 'friendly-snippets', 'cmp-tabnine', 'cmp_luasnip', 'nvim-autopairs', 'hlargs.nvim', 'nvim-cmp', 'nvim-dap-ui'}, { ft = "php" }, _G.packer_plugins)]]
-vim.cmd [[au FileType css ++once lua require("packer.load")({'LuaSnip', 'cmp-nvim-lua', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help', 'cmp-buffer', 'nvim-lspconfig', 'lsp_signature.nvim', 'nvim-dap', 'nvim-treesitter', 'navigator.lua', 'cmp-tmux', 'cmp-path', 'friendly-snippets', 'cmp-tabnine', 'cmp_luasnip', 'nvim-autopairs', 'hlargs.nvim', 'nvim-cmp', 'nvim-dap-ui'}, { ft = "css" }, _G.packer_plugins)]]
+vim.cmd [[au FileType go ++once lua require("packer.load")({'cmp-buffer', 'lsp_signature.nvim', 'navigator.lua', 'cmp_luasnip', 'cmp-path', 'nvim-autopairs', 'hlargs.nvim', 'nvim-dap-ui', 'nvim-cmp', 'cmp-tabnine', 'friendly-snippets', 'nvim-dap', 'LuaSnip', 'nvim-treesitter', 'cmp-tmux', 'cmp-nvim-lua', 'nvim-lspconfig', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help'}, { ft = "go" }, _G.packer_plugins)]]
+vim.cmd [[au FileType lisp ++once lua require("packer.load")({'cmp-buffer', 'lsp_signature.nvim', 'navigator.lua', 'cmp_luasnip', 'cmp-path', 'nvim-autopairs', 'hlargs.nvim', 'nvim-dap-ui', 'nvim-cmp', 'cmp-tabnine', 'friendly-snippets', 'nvim-dap', 'LuaSnip', 'nvim-treesitter', 'cmp-tmux', 'cmp-nvim-lua', 'nvim-lspconfig', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help'}, { ft = "lisp" }, _G.packer_plugins)]]
+vim.cmd [[au FileType gomod ++once lua require("packer.load")({'nvim-autopairs', 'hlargs.nvim', 'nvim-treesitter'}, { ft = "gomod" }, _G.packer_plugins)]]
+vim.cmd [[au FileType fish ++once lua require("packer.load")({'nvim-autopairs', 'hlargs.nvim', 'nvim-treesitter'}, { ft = "fish" }, _G.packer_plugins)]]
+vim.cmd [[au FileType tex ++once lua require("packer.load")({'cmp-buffer', 'lsp_signature.nvim', 'nabla.nvim', 'navigator.lua', 'cmp_luasnip', 'cmp-path', 'nvim-autopairs', 'hlargs.nvim', 'nvim-dap-ui', 'nvim-cmp', 'cmp-tabnine', 'friendly-snippets', 'nvim-dap', 'vimtex', 'LuaSnip', 'nvim-treesitter', 'cmp-tmux', 'cmp-nvim-lua', 'nvim-lspconfig', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help'}, { ft = "tex" }, _G.packer_plugins)]]
+vim.cmd [[au FileType fennel ++once lua require("packer.load")({'nvim-autopairs', 'hlargs.nvim', 'nvim-treesitter'}, { ft = "fennel" }, _G.packer_plugins)]]
+vim.cmd [[au FileType yaml ++once lua require("packer.load")({'nvim-autopairs', 'hlargs.nvim', 'nvim-treesitter'}, { ft = "yaml" }, _G.packer_plugins)]]
+vim.cmd [[au FileType javascriptreact ++once lua require("packer.load")({'cmp-buffer', 'lsp_signature.nvim', 'navigator.lua', 'cmp_luasnip', 'cmp-path', 'nvim-ts-autotag', 'nvim-autopairs', 'hlargs.nvim', 'nvim-dap-ui', 'nvim-cmp', 'cmp-tabnine', 'friendly-snippets', 'nvim-dap', 'LuaSnip', 'nvim-treesitter', 'cmp-tmux', 'cmp-nvim-lua', 'nvim-lspconfig', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help'}, { ft = "javascriptreact" }, _G.packer_plugins)]]
+vim.cmd [[au FileType cmake ++once lua require("packer.load")({'nvim-autopairs', 'hlargs.nvim', 'nvim-treesitter'}, { ft = "cmake" }, _G.packer_plugins)]]
+vim.cmd [[au FileType typescriptreact ++once lua require("packer.load")({'cmp-buffer', 'lsp_signature.nvim', 'navigator.lua', 'cmp_luasnip', 'cmp-path', 'nvim-ts-autotag', 'nvim-autopairs', 'hlargs.nvim', 'nvim-dap-ui', 'nvim-cmp', 'cmp-tabnine', 'friendly-snippets', 'nvim-dap', 'LuaSnip', 'nvim-treesitter', 'cmp-tmux', 'cmp-nvim-lua', 'nvim-lspconfig', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help'}, { ft = "typescriptreact" }, _G.packer_plugins)]]
+vim.cmd [[au FileType typescriptcommon ++once lua require("packer.load")({'cmp-buffer', 'lsp_signature.nvim', 'navigator.lua', 'cmp_luasnip', 'cmp-path', 'nvim-ts-autotag', 'nvim-autopairs', 'hlargs.nvim', 'nvim-dap-ui', 'nvim-cmp', 'cmp-tabnine', 'friendly-snippets', 'nvim-dap', 'LuaSnip', 'nvim-treesitter', 'cmp-tmux', 'cmp-nvim-lua', 'nvim-lspconfig', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help'}, { ft = "typescriptcommon" }, _G.packer_plugins)]]
+vim.cmd [[au FileType cpp ++once lua require("packer.load")({'cmp-buffer', 'lsp_signature.nvim', 'navigator.lua', 'cmp_luasnip', 'cmp-path', 'nvim-autopairs', 'hlargs.nvim', 'nvim-dap-ui', 'nvim-cmp', 'cmp-tabnine', 'friendly-snippets', 'nvim-dap', 'LuaSnip', 'nvim-treesitter', 'cmp-tmux', 'cmp-nvim-lua', 'nvim-lspconfig', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help'}, { ft = "cpp" }, _G.packer_plugins)]]
+vim.cmd [[au FileType rust ++once lua require("packer.load")({'cmp-buffer', 'lsp_signature.nvim', 'navigator.lua', 'cmp_luasnip', 'cmp-path', 'nvim-autopairs', 'hlargs.nvim', 'nvim-dap-ui', 'nvim-cmp', 'rust-tools.nvim', 'cmp-tabnine', 'friendly-snippets', 'nvim-dap', 'LuaSnip', 'nvim-treesitter', 'cmp-tmux', 'cmp-nvim-lua', 'nvim-lspconfig', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help'}, { ft = "rust" }, _G.packer_plugins)]]
+vim.cmd [[au FileType make ++once lua require("packer.load")({'nvim-autopairs', 'hlargs.nvim', 'nvim-treesitter'}, { ft = "make" }, _G.packer_plugins)]]
+vim.cmd [[au FileType zsh ++once lua require("packer.load")({'cmp-buffer', 'lsp_signature.nvim', 'navigator.lua', 'cmp_luasnip', 'cmp-path', 'nvim-autopairs', 'hlargs.nvim', 'nvim-dap-ui', 'nvim-cmp', 'cmp-tabnine', 'friendly-snippets', 'nvim-dap', 'LuaSnip', 'nvim-treesitter', 'cmp-tmux', 'cmp-nvim-lua', 'nvim-lspconfig', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help'}, { ft = "zsh" }, _G.packer_plugins)]]
+vim.cmd [[au FileType html ++once lua require("packer.load")({'cmp-buffer', 'lsp_signature.nvim', 'navigator.lua', 'cmp_luasnip', 'cmp-path', 'nvim-ts-autotag', 'nvim-autopairs', 'hlargs.nvim', 'nvim-dap-ui', 'nvim-cmp', 'cmp-tabnine', 'friendly-snippets', 'nvim-dap', 'LuaSnip', 'nvim-treesitter', 'cmp-tmux', 'cmp-nvim-lua', 'nvim-lspconfig', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help'}, { ft = "html" }, _G.packer_plugins)]]
+vim.cmd [[au FileType php ++once lua require("packer.load")({'cmp-buffer', 'lsp_signature.nvim', 'navigator.lua', 'cmp_luasnip', 'cmp-path', 'nvim-autopairs', 'hlargs.nvim', 'nvim-dap-ui', 'nvim-cmp', 'cmp-tabnine', 'friendly-snippets', 'nvim-dap', 'LuaSnip', 'nvim-treesitter', 'cmp-tmux', 'cmp-nvim-lua', 'nvim-lspconfig', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help'}, { ft = "php" }, _G.packer_plugins)]]
+vim.cmd [[au FileType css ++once lua require("packer.load")({'cmp-buffer', 'lsp_signature.nvim', 'navigator.lua', 'cmp_luasnip', 'cmp-path', 'nvim-autopairs', 'hlargs.nvim', 'nvim-dap-ui', 'nvim-cmp', 'cmp-tabnine', 'friendly-snippets', 'nvim-dap', 'LuaSnip', 'nvim-treesitter', 'cmp-tmux', 'cmp-nvim-lua', 'nvim-lspconfig', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help'}, { ft = "css" }, _G.packer_plugins)]]
+vim.cmd [[au FileType markdown ++once lua require("packer.load")({'cmp-buffer', 'lsp_signature.nvim', 'nabla.nvim', 'navigator.lua', 'cmp_luasnip', 'cmp-path', 'nvim-autopairs', 'hlargs.nvim', 'nvim-dap-ui', 'nvim-cmp', 'cmp-tabnine', 'friendly-snippets', 'nvim-dap', 'LuaSnip', 'nvim-treesitter', 'cmp-tmux', 'cmp-nvim-lua', 'nvim-lspconfig', 'cmp-nvim-lsp', 'markdown-preview.nvim', 'cmp-nvim-lsp-signature-help'}, { ft = "markdown" }, _G.packer_plugins)]]
+vim.cmd [[au FileType vue ++once lua require("packer.load")({'cmp-buffer', 'lsp_signature.nvim', 'navigator.lua', 'cmp_luasnip', 'cmp-path', 'nvim-ts-autotag', 'nvim-autopairs', 'hlargs.nvim', 'nvim-dap-ui', 'nvim-cmp', 'cmp-tabnine', 'friendly-snippets', 'nvim-dap', 'LuaSnip', 'nvim-treesitter', 'cmp-tmux', 'cmp-nvim-lua', 'nvim-lspconfig', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help'}, { ft = "vue" }, _G.packer_plugins)]]
+vim.cmd [[au FileType java ++once lua require("packer.load")({'cmp-buffer', 'lsp_signature.nvim', 'navigator.lua', 'cmp_luasnip', 'cmp-path', 'nvim-autopairs', 'hlargs.nvim', 'nvim-dap-ui', 'nvim-cmp', 'cmp-tabnine', 'friendly-snippets', 'nvim-dap', 'LuaSnip', 'nvim-treesitter', 'cmp-tmux', 'cmp-nvim-lua', 'nvim-lspconfig', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help'}, { ft = "java" }, _G.packer_plugins)]]
+vim.cmd [[au FileType ruby ++once lua require("packer.load")({'cmp-buffer', 'lsp_signature.nvim', 'navigator.lua', 'cmp_luasnip', 'cmp-path', 'nvim-autopairs', 'hlargs.nvim', 'nvim-dap-ui', 'nvim-cmp', 'cmp-tabnine', 'friendly-snippets', 'nvim-dap', 'LuaSnip', 'nvim-treesitter', 'cmp-tmux', 'cmp-nvim-lua', 'nvim-lspconfig', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help'}, { ft = "ruby" }, _G.packer_plugins)]]
+vim.cmd [[au FileType python ++once lua require("packer.load")({'cmp-buffer', 'lsp_signature.nvim', 'navigator.lua', 'cmp_luasnip', 'cmp-path', 'nvim-autopairs', 'hlargs.nvim', 'nvim-dap-ui', 'nvim-cmp', 'cmp-tabnine', 'friendly-snippets', 'nvim-dap', 'LuaSnip', 'nvim-treesitter', 'cmp-tmux', 'cmp-nvim-lua', 'nvim-lspconfig', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help'}, { ft = "python" }, _G.packer_plugins)]]
+vim.cmd [[au FileType julia ++once lua require("packer.load")({'cmp-buffer', 'lsp_signature.nvim', 'navigator.lua', 'cmp_luasnip', 'cmp-path', 'nvim-autopairs', 'hlargs.nvim', 'nvim-dap-ui', 'nvim-cmp', 'cmp-tabnine', 'friendly-snippets', 'nvim-dap', 'LuaSnip', 'nvim-treesitter', 'cmp-tmux', 'cmp-nvim-lua', 'nvim-lspconfig', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help'}, { ft = "julia" }, _G.packer_plugins)]]
+vim.cmd [[au FileType nix ++once lua require("packer.load")({'cmp-buffer', 'lsp_signature.nvim', 'navigator.lua', 'cmp_luasnip', 'cmp-path', 'nvim-autopairs', 'hlargs.nvim', 'nvim-dap-ui', 'nvim-cmp', 'cmp-tabnine', 'friendly-snippets', 'nvim-dap', 'LuaSnip', 'nvim-treesitter', 'cmp-tmux', 'cmp-nvim-lua', 'nvim-lspconfig', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help'}, { ft = "nix" }, _G.packer_plugins)]]
 vim.cmd [[au FileType qf ++once lua require("packer.load")({'nvim-bqf'}, { ft = "qf" }, _G.packer_plugins)]]
-vim.cmd [[au FileType markdown ++once lua require("packer.load")({'LuaSnip', 'cmp-nvim-lua', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help', 'cmp-buffer', 'nvim-lspconfig', 'lsp_signature.nvim', 'markdown-preview.nvim', 'nvim-dap', 'nabla.nvim', 'nvim-treesitter', 'navigator.lua', 'cmp-tmux', 'cmp-path', 'friendly-snippets', 'cmp-tabnine', 'cmp_luasnip', 'nvim-autopairs', 'hlargs.nvim', 'nvim-cmp', 'nvim-dap-ui'}, { ft = "markdown" }, _G.packer_plugins)]]
-vim.cmd [[au FileType lua ++once lua require("packer.load")({'LuaSnip', 'cmp-nvim-lua', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help', 'cmp-buffer', 'nvim-lspconfig', 'lsp_signature.nvim', 'nvim-dap', 'nvim-treesitter', 'navigator.lua', 'cmp-tmux', 'cmp-path', 'friendly-snippets', 'cmp-tabnine', 'cmp_luasnip', 'nvim-autopairs', 'hlargs.nvim', 'nvim-cmp', 'nvim-dap-ui'}, { ft = "lua" }, _G.packer_plugins)]]
-vim.cmd [[au FileType go ++once lua require("packer.load")({'go.nvim', 'LuaSnip', 'cmp-nvim-lua', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help', 'cmp-buffer', 'nvim-lspconfig', 'lsp_signature.nvim', 'nvim-dap', 'nvim-treesitter', 'navigator.lua', 'cmp-tmux', 'cmp-path', 'friendly-snippets', 'cmp-tabnine', 'cmp_luasnip', 'nvim-autopairs', 'hlargs.nvim', 'nvim-cmp', 'nvim-dap-ui'}, { ft = "go" }, _G.packer_plugins)]]
-vim.cmd [[au FileType typescriptcommon ++once lua require("packer.load")({'nvim-ts-autotag', 'LuaSnip', 'cmp-nvim-lua', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help', 'cmp-buffer', 'nvim-lspconfig', 'lsp_signature.nvim', 'nvim-dap', 'nvim-treesitter', 'navigator.lua', 'cmp-tmux', 'cmp-path', 'friendly-snippets', 'cmp-tabnine', 'cmp_luasnip', 'nvim-autopairs', 'hlargs.nvim', 'nvim-cmp', 'nvim-dap-ui'}, { ft = "typescriptcommon" }, _G.packer_plugins)]]
-vim.cmd [[au FileType javascript ++once lua require("packer.load")({'nvim-ts-autotag', 'LuaSnip', 'cmp-nvim-lua', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help', 'cmp-buffer', 'nvim-lspconfig', 'lsp_signature.nvim', 'nvim-dap', 'nvim-treesitter', 'navigator.lua', 'cmp-tmux', 'cmp-path', 'friendly-snippets', 'cmp-tabnine', 'cmp_luasnip', 'nvim-autopairs', 'hlargs.nvim', 'nvim-cmp', 'nvim-dap-ui'}, { ft = "javascript" }, _G.packer_plugins)]]
+vim.cmd [[au FileType json ++once lua require("packer.load")({'nvim-autopairs', 'hlargs.nvim', 'nvim-treesitter'}, { ft = "json" }, _G.packer_plugins)]]
+vim.cmd [[au FileType vim ++once lua require("packer.load")({'cmp-buffer', 'lsp_signature.nvim', 'navigator.lua', 'cmp_luasnip', 'cmp-path', 'nvim-autopairs', 'hlargs.nvim', 'nvim-dap-ui', 'nvim-cmp', 'cmp-tabnine', 'friendly-snippets', 'nvim-dap', 'LuaSnip', 'nvim-treesitter', 'cmp-tmux', 'cmp-nvim-lua', 'nvim-lspconfig', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help'}, { ft = "vim" }, _G.packer_plugins)]]
+vim.cmd [[au FileType lua ++once lua require("packer.load")({'cmp-buffer', 'lsp_signature.nvim', 'navigator.lua', 'cmp_luasnip', 'cmp-path', 'nvim-autopairs', 'hlargs.nvim', 'nvim-dap-ui', 'nvim-cmp', 'cmp-tabnine', 'friendly-snippets', 'nvim-dap', 'LuaSnip', 'nvim-treesitter', 'cmp-tmux', 'cmp-nvim-lua', 'nvim-lspconfig', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help'}, { ft = "lua" }, _G.packer_plugins)]]
+vim.cmd [[au FileType toml ++once lua require("packer.load")({'nvim-autopairs', 'hlargs.nvim', 'nvim-treesitter'}, { ft = "toml" }, _G.packer_plugins)]]
+vim.cmd [[au FileType bash ++once lua require("packer.load")({'cmp-buffer', 'lsp_signature.nvim', 'navigator.lua', 'cmp_luasnip', 'cmp-path', 'nvim-autopairs', 'hlargs.nvim', 'nvim-dap-ui', 'nvim-cmp', 'cmp-tabnine', 'friendly-snippets', 'nvim-dap', 'LuaSnip', 'nvim-treesitter', 'cmp-tmux', 'cmp-nvim-lua', 'nvim-lspconfig', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help'}, { ft = "bash" }, _G.packer_plugins)]]
+vim.cmd [[au FileType c ++once lua require("packer.load")({'cmp-buffer', 'lsp_signature.nvim', 'navigator.lua', 'cmp_luasnip', 'cmp-path', 'nvim-autopairs', 'hlargs.nvim', 'nvim-dap-ui', 'nvim-cmp', 'cmp-tabnine', 'friendly-snippets', 'nvim-dap', 'LuaSnip', 'nvim-treesitter', 'cmp-tmux', 'cmp-nvim-lua', 'nvim-lspconfig', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help'}, { ft = "c" }, _G.packer_plugins)]]
+vim.cmd [[au FileType sh ++once lua require("packer.load")({'cmp-buffer', 'lsp_signature.nvim', 'navigator.lua', 'cmp_luasnip', 'cmp-path', 'nvim-autopairs', 'hlargs.nvim', 'nvim-dap-ui', 'nvim-cmp', 'cmp-tabnine', 'friendly-snippets', 'nvim-dap', 'LuaSnip', 'nvim-treesitter', 'cmp-tmux', 'cmp-nvim-lua', 'nvim-lspconfig', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help'}, { ft = "sh" }, _G.packer_plugins)]]
+vim.cmd [[au FileType typescript ++once lua require("packer.load")({'cmp-buffer', 'lsp_signature.nvim', 'navigator.lua', 'cmp_luasnip', 'cmp-path', 'nvim-ts-autotag', 'nvim-autopairs', 'hlargs.nvim', 'nvim-dap-ui', 'nvim-cmp', 'cmp-tabnine', 'friendly-snippets', 'nvim-dap', 'LuaSnip', 'nvim-treesitter', 'cmp-tmux', 'cmp-nvim-lua', 'nvim-lspconfig', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help'}, { ft = "typescript" }, _G.packer_plugins)]]
+vim.cmd [[au FileType javascript ++once lua require("packer.load")({'cmp-buffer', 'lsp_signature.nvim', 'navigator.lua', 'cmp_luasnip', 'cmp-path', 'nvim-ts-autotag', 'nvim-autopairs', 'hlargs.nvim', 'nvim-dap-ui', 'nvim-cmp', 'cmp-tabnine', 'friendly-snippets', 'nvim-dap', 'LuaSnip', 'nvim-treesitter', 'cmp-tmux', 'cmp-nvim-lua', 'nvim-lspconfig', 'cmp-nvim-lsp', 'cmp-nvim-lsp-signature-help'}, { ft = "javascript" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au BufNewFile * ++once lua require("packer.load")({'nvim-treesitter'}, { event = "BufNewFile *" }, _G.packer_plugins)]]
-vim.cmd [[au BufRead * ++once lua require("packer.load")({'venn.nvim', 'hop.nvim', 'indent-blankline.nvim', 'marks.nvim', 'nvim-treesitter', 'null-ls.nvim', 'numb.nvim', 'harpoon', 'gitsigns.nvim', 'trouble.nvim', 'todo-comments.nvim', 'undotree'}, { event = "BufRead *" }, _G.packer_plugins)]]
-vim.cmd [[au BufWritePre * ++once lua require("packer.load")({'mkdir.nvim'}, { event = "BufWritePre *" }, _G.packer_plugins)]]
-vim.cmd [[au VimEnter * ++once lua require("packer.load")({'vim-repeat', 'vim-surround', 'gruvbox-material', 'telescope.nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'null-ls.nvim'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au VimEnter * ++once lua require("packer.load")({'telescope.nvim', 'vim-repeat', 'gruvbox-material', 'vim-surround'}, { event = "VimEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'toggleterm.nvim'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au BufNewFile * ++once lua require("packer.load")({'nvim-treesitter'}, { event = "BufNewFile *" }, _G.packer_plugins)]]
+vim.cmd [[au BufWritePre * ++once lua require("packer.load")({'mkdir.nvim'}, { event = "BufWritePre *" }, _G.packer_plugins)]]
+vim.cmd [[au BufRead * ++once lua require("packer.load")({'indent-blankline.nvim', 'venn.nvim', 'trouble.nvim', 'undotree', 'null-ls.nvim', 'hop.nvim', 'numb.nvim', 'marks.nvim', 'harpoon', 'gitsigns.nvim', 'todo-comments.nvim', 'nvim-treesitter'}, { event = "BufRead *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 vim.cmd [[augroup filetypedetect]]
-time([[Sourcing ftdetect script at: /home/gengar/.local/share/nvim/site/pack/packer/opt/go.nvim/ftdetect/go.vim]], true)
-vim.cmd [[source /home/gengar/.local/share/nvim/site/pack/packer/opt/go.nvim/ftdetect/go.vim]]
-time([[Sourcing ftdetect script at: /home/gengar/.local/share/nvim/site/pack/packer/opt/go.nvim/ftdetect/go.vim]], false)
-time([[Sourcing ftdetect script at: /home/gengar/.local/share/nvim/site/pack/packer/opt/LuaSnip/ftdetect/snippets.vim]], true)
-vim.cmd [[source /home/gengar/.local/share/nvim/site/pack/packer/opt/LuaSnip/ftdetect/snippets.vim]]
-time([[Sourcing ftdetect script at: /home/gengar/.local/share/nvim/site/pack/packer/opt/LuaSnip/ftdetect/snippets.vim]], false)
+time([[Sourcing ftdetect script at: /home/gengar/.local/share/nvim/site/pack/packer/opt/navigator.lua/ftdetect/tf.vim]], true)
+vim.cmd [[source /home/gengar/.local/share/nvim/site/pack/packer/opt/navigator.lua/ftdetect/tf.vim]]
+time([[Sourcing ftdetect script at: /home/gengar/.local/share/nvim/site/pack/packer/opt/navigator.lua/ftdetect/tf.vim]], false)
 time([[Sourcing ftdetect script at: /home/gengar/.local/share/nvim/site/pack/packer/opt/vimtex/ftdetect/cls.vim]], true)
 vim.cmd [[source /home/gengar/.local/share/nvim/site/pack/packer/opt/vimtex/ftdetect/cls.vim]]
 time([[Sourcing ftdetect script at: /home/gengar/.local/share/nvim/site/pack/packer/opt/vimtex/ftdetect/cls.vim]], false)
@@ -754,9 +740,9 @@ time([[Sourcing ftdetect script at: /home/gengar/.local/share/nvim/site/pack/pac
 time([[Sourcing ftdetect script at: /home/gengar/.local/share/nvim/site/pack/packer/opt/vimtex/ftdetect/tikz.vim]], true)
 vim.cmd [[source /home/gengar/.local/share/nvim/site/pack/packer/opt/vimtex/ftdetect/tikz.vim]]
 time([[Sourcing ftdetect script at: /home/gengar/.local/share/nvim/site/pack/packer/opt/vimtex/ftdetect/tikz.vim]], false)
-time([[Sourcing ftdetect script at: /home/gengar/.local/share/nvim/site/pack/packer/opt/navigator.lua/ftdetect/tf.vim]], true)
-vim.cmd [[source /home/gengar/.local/share/nvim/site/pack/packer/opt/navigator.lua/ftdetect/tf.vim]]
-time([[Sourcing ftdetect script at: /home/gengar/.local/share/nvim/site/pack/packer/opt/navigator.lua/ftdetect/tf.vim]], false)
+time([[Sourcing ftdetect script at: /home/gengar/.local/share/nvim/site/pack/packer/opt/LuaSnip/ftdetect/snippets.vim]], true)
+vim.cmd [[source /home/gengar/.local/share/nvim/site/pack/packer/opt/LuaSnip/ftdetect/snippets.vim]]
+time([[Sourcing ftdetect script at: /home/gengar/.local/share/nvim/site/pack/packer/opt/LuaSnip/ftdetect/snippets.vim]], false)
 vim.cmd("augroup END")
 if should_profile then save_profiles() end
 

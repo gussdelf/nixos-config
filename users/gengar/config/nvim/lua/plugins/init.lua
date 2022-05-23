@@ -408,14 +408,14 @@ return require("packer").startup {
 
 			{
 				-- Go
-				{
-					"ray-x/go.nvim",
-					ft = "go",
-					after = "nvim-lspconfig",
-					config = function()
-						require("plugins.configs.lspconfig").go()
-					end,
-				},
+				-- {
+				-- 	"ray-x/go.nvim",
+				-- 	ft = "go",
+				-- 	after = "nvim-lspconfig",
+				-- 	config = function()
+				-- 		require("plugins.configs.lspconfig").go()
+				-- 	end,
+				-- },
 
 				-- Rust
 				{
