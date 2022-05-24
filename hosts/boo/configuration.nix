@@ -55,11 +55,22 @@
 
   programs.adb.enable = true;
 
-  users.users.gengar = {
-    isNormalUser = true;
-    shell = pkgs.zsh;
-    home = "/home/gengar";
-    extraGroups = [ "wheel" "audio" "adbusers" ];
+  users.users = {
+
+    gengar = {
+      isNormalUser = true;
+      shell = pkgs.zsh;
+      home = "/home/gengar";
+      extraGroups = [ "wheel" "audio" "adbusers" ];
+    };
+
+    gaiseric = {
+      isNormalUser = true;
+      shell = pkgs.zsh;
+      home = "/home/gaiseric";
+      extraGroups = [ "wheel" "audio" "adbusers" ];
+    };
+
   };
 
   security.sudo.wheelNeedsPassword = false;
@@ -71,21 +82,16 @@
     systemPackages = with pkgs; [
       zsh
       psmisc
-      fish
       ripgrep
       sxhkd
       fd
       go
-      brave
       python3
       unzip
       tmux
       rsync
       curl
       wget
-      xclip
-      feh
-      sxiv
       gcc
       clang
       clang-tools
@@ -93,7 +99,6 @@
       gnumake
       nixfmt
       rustup
-      polybar
     ];
   };
 

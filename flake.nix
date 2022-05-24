@@ -22,18 +22,25 @@
         joypixels.acceptLicense = true;
         pulseaudio = true;
       };
+      filterNixFiles = k: v: v == "regular" && nixpkgs.lib.hasSuffix ".nix" k;
 
-      overlays = with inputs; [
-        (final: _:
-          let inherit (final) system;
-          in
-          {
-            neovim-nigthly = neovim.packages."${system}".neovim;
-            unstable = import unstable { inherit system config; };
-          })
-        neovim-nightly.overlay
-        nur.overlay
-      ];
+      importNixFiles = path:
+        with nixpkgs.lib;
+        (lists.forEach (mapAttrsToList (name: _: path + ("/" + name))
+          (filterAttrs filterNixFiles (builtins.readDir path)))) import;
+
+      overlays = with inputs;
+        [
+          (final: _:
+            let inherit (final) system;
+            in
+            {
+              neovim-nigthly = neovim.packages."${system}".neovim;
+              unstable = import unstable { inherit system config; };
+            })
+          neovim-nightly.overlay
+          nur.overlay
+        ] ++ (importNixFiles ./overlays);
 
     in
     {
@@ -47,6 +54,10 @@
         gengar = import ./users/gengar {
           inherit config nixpkgs home overlays inputs;
         };
+
+        # gaiseric = import ./users/gaiseric {
+        #   inherit config nixpkgs home overlays inputs;
+        # };
       };
 
       boo = self.nixosConfigurations.boo.config.system.build.toplevel;
