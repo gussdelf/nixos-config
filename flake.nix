@@ -38,8 +38,9 @@
     in
     {
       nixosConfigurations = {
-        boo =
-          import ./host { inherit system nixpkgs home inputs config overlays; };
+        boo = import ./hosts/boo {
+          inherit system nixpkgs home inputs config overlays;
+        };
       };
 
       homeConfigurations = {
