@@ -22,6 +22,8 @@
         joypixels.acceptLicense = true;
         pulseaudio = true;
       };
+
+      # THIEF!!!
       filterNixFiles = k: v: v == "regular" && nixpkgs.lib.hasSuffix ".nix" k;
 
       importNixFiles = path:
