@@ -73,11 +73,6 @@
       nf = "neofetch";
       cp = "rsync";
       uf = "ufetch";
-      ls = "exa -s type --git --icons";
-      ll = "exa -s type -l --git --icons";
-      la = "exa -s type -la --git --icons";
-      lla = "exa -s type -la --git --icons";
-      lsa = "exa -s type -a --git --icons";
       hee = "home-manager edit";
       cmd = "command";
       doo = "doas";
@@ -86,7 +81,6 @@
       bat = "bat --style plain -P --theme base16";
       use = "xrdb merge";
       load = "kill -USR1 $(pidof st)";
-      tree = "exa --icons -s type -T --git";
       nixc = "$EDITOR ~/Projects/nixos-config/configuration.nix";
       mutt = "neomutt";
       magit = ''emacsclient -nc -e "(magit-status)"'';
