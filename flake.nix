@@ -57,9 +57,9 @@
           inherit config nixpkgs home overlays inputs;
         };
 
-        # gaiseric = import ./users/gaiseric {
-        #   inherit config nixpkgs home overlays inputs;
-        # };
+        gaiseric = import ./users/gaiseric {
+          inherit config nixpkgs home overlays inputs;
+        };
       };
 
       boo = self.nixosConfigurations.boo.config.system.build.toplevel;
