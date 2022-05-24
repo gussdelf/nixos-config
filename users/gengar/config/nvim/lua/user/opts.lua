@@ -1,4 +1,5 @@
 local o = vim.opt
+local g = vim.g
 local a = 4
 
 -- Indent
@@ -24,14 +25,19 @@ o.smartcase = true
 o.incsearch = true
 
 -- Filetypes
-vim.g.did_load_filetypes = 0
-vim.g.do_filetype_lua = 1
+g.did_load_filetypes = 0
+g.do_filetype_lua = 1
 
-vim.g.python_host_prog = "/usr/bin/python"
-vim.g.python3_host_prog = "/usr/bin/python3"
+-- Python
+g.python_host_prog = "/usr/bin/python"
+g.python3_host_prog = "/usr/bin/python3"
 
--- o.foldmethod = "expr" -- use treesitter for folding
--- o.foldexpr = "nvim_treesitter#foldexpr()"
+-- Paren
+o.showmatch = true
+g.matchtime = 10
+
+-- Grep
+o.grepprg = "rg --vimgrep"
 
 -- Others
 o.formatoptions:remove { "c", "r", "o" }
