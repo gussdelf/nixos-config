@@ -27,9 +27,7 @@ ColorGruv = function(style, tbg)
 	vim.api.nvim_set_hl(0, "SpecialKeyWin", { fg = "#3c3836" })
 	vim.api.nvim_set_hl(0, "GHTextViewDark", { bg = "NONE", fg = "NONE" })
 	vim.api.nvim_set_hl(0, "GHListDark", { bg = "NONE", fg = "NONE" })
-	vim.cmd [[
-		set winhighlight=SpecialKey:SpecialKeyWin
-	]]
+	vim.cmd { cmd = "set", args = { "winhighlight=SpecialKey:SpecialKeyWin" } }
 end
 
 ColorKana = function(tbg)
@@ -85,7 +83,6 @@ end
 ColorTokyo = function(style, tbg)
 	vim.g.tokyonight_transparent = tbg
 	vim.g.tokyonight_style = style
-	vim.cmd [[ color tokyonight ]]
 	Colorscheme "tokyonight"
 	vim.api.nvim_set_hl(0, "MatchParen", { link = "Search" })
 	vim.api.nvim_set_hl(0, "TelescopeMatching", { link = "Search" })

@@ -5,14 +5,14 @@ local install_path = vim.fn.stdpath "data" .. "/site/pack/packer/start/packer.nv
 
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 	PackerBootstrap = vim.fn.execute("!git clone --depth 1 https://github.com/wbthomason/packer.nvim " .. install_path)
-	vim.cmd [[ packadd packer.nvim ]]
+	vim.cmd { cmd = "packadd", args = { "packer.nvim" } }
 end
 
-vim.cmd [[cnoreabbrev pco PackerCompile]]
-vim.cmd [[cnoreabbrev pcl PackerClean]]
-vim.cmd [[cnoreabbrev pci PackerInstall]]
-vim.cmd [[cnoreabbrev pcss PackerSync]]
-vim.cmd [[cnoreabbrev pcst PackerStatus]]
+vim.cmd { cmd = "cnoreabbrev", args = { "pco PackerCompile" } }
+vim.cmd { cmd = "cnoreabbrev", args = { "pcl PackerClean" } }
+vim.cmd { cmd = "cnoreabbrev", args = { "pci PackerInstall" } }
+vim.cmd { cmd = "cnoreabbrev", args = { "pcss PackerSync" } }
+vim.cmd { cmd = "cnoreabbrev", args = { "pcst PackerStatus" } }
 
 -- Require packer_compiled
 pcall(require, "packer_compiled")
