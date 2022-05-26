@@ -8,9 +8,9 @@
       epkgs.doom-themes
       epkgs.doom-modeline
       epkgs.evil
-      epkgs.evil-collection
       epkgs.evil-org
       epkgs.evil-surround
+      epkgs.evil-collection
       epkgs.evil-nerd-commenter
     ];
   };

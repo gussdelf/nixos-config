@@ -18,13 +18,14 @@
     ".config/nvim".source = ./config/nvim;
     ".config/tmux".source = ./config/tmux;
     ".config/doom".source = ./config/doom;
-    ".config/sxhkd".source = ./config/sxhkd;
-    ".config/bspwm".source = ./config/bspwm;
     ".config/xrdb".source = ./config/xrdb;
     ".config/rofi".source = ./config/rofi;
     ".config/zathura".source = ./config/zathura;
     ".config/polybar".source = ./config/polybar;
-    
+    ".config/sxhkd".source = ./config/sxhkd;
+    ".config/bspwm".source = ./config/bspwm;
+    ".config/awesome".source = ./config/awesome;
+
     # Wallpapers
     "Imgs/wallpapers".source = ./wallpapers;
   };
