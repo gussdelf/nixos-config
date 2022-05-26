@@ -7,9 +7,9 @@
       add_newline = false;
       format = lib.concatStrings [ "$character" "$all" ];
       character = {
-        success_symbol = "[λ ](purple)";
-        error_symbol = "[λ ](red)";
-        vicmd_symbol = "[λ ](green)";
+        success_symbol = "[λ](purple)";
+        error_symbol = "[λ](red)";
+        vicmd_symbol = "[λ](green)";
       };
       directory = {
         read_only = " ";

@@ -4,8 +4,19 @@
       shfmt
       shellcheck
 
+      xclip
+
+      picom
+      feh
+      sxiv
+
+      lxappearance
+      capitaine-cursors
+
       st-guss
       dmenu-guss
+
+      neovim-nightly
     ];
   };
 }
