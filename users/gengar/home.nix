@@ -32,15 +32,16 @@
 
   imports = [
     ./pkgs.nix
-    ./programs/starship.nix
+    # ./programs/nnn.nix
     ./programs/git.nix
-    ./programs/zsh.nix
-    ./programs/fish.nix
-    ./programs/fzf.nix
-    ./programs/zoxide.nix
     ./programs/bat.nix
+    ./programs/zsh.nix
+    ./programs/fzf.nix
+    ./programs/fish.nix
     ./programs/helix.nix
     ./programs/emacs.nix
+    ./programs/starship.nix
+    ./programs/zoxide.nix
     ./programs/firefox/default.nix
   ];
 
