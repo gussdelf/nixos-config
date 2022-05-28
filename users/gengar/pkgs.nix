@@ -28,6 +28,7 @@
       ytfzf
       bitwarden
       glow
+      picom
 
       feh
       sxiv
