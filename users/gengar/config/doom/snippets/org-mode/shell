@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: shell
+# key: sh
+# uuid: shell
+# --
+#+BEGIN_SRC shell :tangle yes
+`%`$0
+#+END_SRC

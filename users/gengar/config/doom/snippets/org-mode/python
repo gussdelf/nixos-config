@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: python-org
+# key: py
+# uuid: py-org
+# --
+#+BEGIN_SRC python :tangle yes
+`%`$0
+#+END_SRC

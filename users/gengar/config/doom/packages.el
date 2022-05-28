@@ -1,0 +1,7 @@
+(unpin! (:ui doom))
+(package! tree-sitter)
+(package! tree-sitter-langs)
+(package! theme-magic)
+(package! spacemacs-theme)
+(package! password-generator)
+(package! screenshot :recipe (:host github :repo "tecosaur/screenshot"))
