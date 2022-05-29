@@ -2,8 +2,26 @@
   home = {
     username = "gengar";
     homeDirectory = "/home/gengar";
+    sessionVariables = {
+      XAUTHORITY = "${config.home.homeDirectory}/.config/xauthority";
+    };
   };
 
+  xdg = {
+    enable = true;
+    cacheHome = "${config.home.homeDirectory}/.cache";
+    dataHome = "${config.home.homeDirectory}/.local/share";
+    configHome = "${config.home.homeDirectory}/.config";
+    userDirs = {
+      enable = true;
+      documents = "$HOME/Docs";
+      download = "$HOME/Files";
+      pictures = "$HOME/Imgs";
+      music = "$HOME/Files/Music";
+    };
+  };
+
+  gtk.gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
   programs = {
     home-manager.enable = true;
     htop.enable = true;
