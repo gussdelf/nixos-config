@@ -17,6 +17,7 @@
       dmenu-guss
 
       neovim-nightly
+      emacs
     ];
   };
 }
