@@ -12,6 +12,9 @@
     neovim-nightly.inputs.nixpkgs.follows = "nixpkgs";
 
     nur.url = "github:nix-community/NUR";
+
+    emacs.url = "github:nix-community/emacs-overlay";
+    emacs.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { self, nixpkgs, home, ... }@inputs:
@@ -41,6 +44,7 @@
               unstable = import unstable { inherit system config; };
             })
           neovim-nightly.overlay
+          emacs.overlay
           nur.overlay
         ] ++ (importNixFiles ./overlays);
 
