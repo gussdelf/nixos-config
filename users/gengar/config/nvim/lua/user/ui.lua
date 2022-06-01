@@ -11,9 +11,9 @@ o.relativenumber = true
 o.cursorline = true
 
 -- Chars
--- o.listchars = { tab = "» " }
--- o.list = true
+--o.listchars = { eol = "↴", tabs = "  " }
 o.fillchars = { eob = " " }
+o.list = true
 
 -- signcolumn
 o.signcolumn = "yes"

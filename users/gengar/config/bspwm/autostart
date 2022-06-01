@@ -6,7 +6,7 @@ xinput --set-prop "SIGMACHIP Usb Mouse" "Coordinate Transformation Matrix" 0.5 0
 xsetroot -cursor_name left_ptr &
 xset r rate 320 40 &
 
-picom -f &
+picom &
 xrdb ~/.config/xrdb/Gruvbox &
 feh --bg-scale ~/Imgs/wallpapers/forest.jpg --no-fehbg &
 

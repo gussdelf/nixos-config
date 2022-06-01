@@ -35,7 +35,6 @@
 
   home.file = {
     # Some raw configs
-    ".config/nvim".source = ./config/nvim;
     ".config/tmux".source = ./config/tmux;
     ".config/doom".source = ./config/doom;
     ".config/xrdb".source = ./config/xrdb;
@@ -58,11 +57,14 @@
     ./programs/zsh.nix
     ./programs/fzf.nix
     ./programs/fish.nix
-    ./programs/helix.nix
-    ./programs/emacs.nix
     ./programs/starship.nix
     ./programs/zoxide.nix
     ./programs/firefox/default.nix
+
+    # the trinity
+    ./programs/neovim.nix
+    ./programs/helix.nix
+    ./programs/emacs.nix
   ];
 
 }

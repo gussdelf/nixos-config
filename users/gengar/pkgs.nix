@@ -42,11 +42,6 @@
       polybar
       rofi
 
-      # The trinity
-      emacsNativeComp
-      neovim-nightly
-      helix
-
       nix-prefetch-github
     ];
   };
