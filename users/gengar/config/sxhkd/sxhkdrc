@@ -12,11 +12,11 @@ alt + ctrl + Return
 
 # run emacsclient doom
 alt + ctrl + d
-	emacsclient -nc --socket-name doom
+	emacsclient -nc 
 
 # run emacs 
 alt + ctrl + e
-	emacs
+	emacs --daemon
 
 # watch
 alt + ctrl + y

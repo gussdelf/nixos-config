@@ -20,8 +20,10 @@
 
   networking = {
     useDHCP = false;
-    interfaces.enp0s29f0u2.useDHCP = true;
-    interfaces.enp1s0.useDHCP = true;
+    interfaces = {
+      enp0s29f0u2.useDHCP = true;
+      enp1s0.useDHCP = true;
+    };
     hostName = "boo";
   };
 
