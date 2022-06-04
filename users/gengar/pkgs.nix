@@ -3,7 +3,9 @@
     packages = with pkgs; [
       catgirl
       tdesktop
+
       brave
+      librewolf
 
       nodePackages.bash-language-server
       nodePackages.typescript-language-server
