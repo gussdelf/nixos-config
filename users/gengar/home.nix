@@ -36,7 +36,6 @@
   home.file = {
     # Some raw configs
     ".config/tmux".source = ./config/tmux;
-    # ".config/doom".source = ./config/doom;
     ".config/xrdb".source = ./config/xrdb;
     ".config/rofi".source = ./config/rofi;
     ".config/zathura".source = ./config/zathura;

@@ -1,5 +1,6 @@
 { config, pkgs, overlays, ... }: {
   #home.file.".config/emacs".source = ../config/emacs;
+  ".config/doom".source = ./config/doom;
   programs.emacs = {
     enable = true;
     package = pkgs.emacsNativeComp;
