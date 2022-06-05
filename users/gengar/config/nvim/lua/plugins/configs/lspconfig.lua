@@ -41,6 +41,7 @@ local function on_attach(client, bufnr)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.offsetEncoding = { "utf-8" }
 capabilities.textDocument.completion.completionItem.documentationFormat = { "markdown", "plaintext" }
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities.textDocument.completion.completionItem.preselectSupport = true
@@ -61,7 +62,6 @@ local servers = {
 	"pyright",
 	"rust_analyzer",
 	"tsserver",
-	"clangd",
 	"gopls",
 	"sumneko_lua",
 	"julials",
@@ -79,6 +79,14 @@ for _, lsp in pairs(servers) do
 		},
 	}
 end
+
+lspconfig.clangd.setup {
+	on_attach = on_attach,
+	capabilities = capabilities,
+	flags = {
+		debounce_text_changes = 150,
+	},
+}
 
 vim.keymap.set("n", "<leader>li", "<cmd>LspInfo<cr>", { silent = true })
 vim.keymap.set("n", "<leader>lr", "<cmd>LspRestart<cr>", { silent = true })

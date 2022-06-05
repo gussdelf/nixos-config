@@ -383,6 +383,13 @@ return require("packer").startup {
 					end,
 				},
 				{
+					"Maan2003/lsp_lines.nvim",
+					after = "nvim-lspconfig",
+					config = function()
+						require("lsp_lines").register_lsp_virtual_lines()
+					end,
+				},
+				{
 					"ray-x/navigator.lua",
 					after = "nvim-lspconfig",
 					ft = lspLangs,

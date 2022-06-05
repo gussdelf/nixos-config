@@ -11,7 +11,7 @@ o.relativenumber = true
 o.cursorline = true
 
 -- Chars
---o.listchars = { eol = "↴", tabs = "  " }
+o.listchars = { eol = "↴", tab = "  " }
 o.fillchars = { eob = " " }
 o.list = true
 
