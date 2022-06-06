@@ -90,6 +90,7 @@
       go
       python3
       unzip
+      p7zip
       tmux
       rsync
       curl

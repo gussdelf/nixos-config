@@ -44,6 +44,8 @@
       polybar
       rofi
 
+      duckstation
+
       nix-prefetch-github
     ];
   };
