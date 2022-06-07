@@ -45,6 +45,7 @@
       rofi
 
       duckstation
+      mupen64plus
 
       nix-prefetch-github
     ];

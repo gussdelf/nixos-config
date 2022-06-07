@@ -18,9 +18,22 @@
       };
     };
     languages = [
-      { name = "nix"; auto-format = true; }
-      { name = "rust"; auto-format = true; }
-      { name = "c"; auto-format = true; }
+      {
+        name = "nix";
+        auto-format = true;
+      }
+      {
+        name = "rust";
+        auto-format = true;
+      }
+      {
+        name = "c";
+        auto-format = true;
+      }
+      {
+        name = "cpp";
+        auto-format = true;
+      }
     ];
   };
 }

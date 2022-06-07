@@ -43,6 +43,7 @@
     ".config/sxhkd".source = ./config/sxhkd;
     ".config/bspwm".source = ./config/bspwm;
     ".config/awesome".source = ./config/awesome;
+    ".config/mupen64plus".source = ./config/mupen64plus;
 
     # Wallpapers
     "Imgs/wallpapers".source = ./wallpapers;

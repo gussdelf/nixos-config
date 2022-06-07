@@ -17,7 +17,6 @@ M.fugitive = function()
 		end,
 	})
 	vim.keymap.set("n", "<leader>gs", "<cmd>0G<cr>", { silent = true })
-	vim.cmd { cmd = "cnoreabbrev", args = { " g 0Git" } }
 end
 
 M.gitsigns = function()
