@@ -2,12 +2,23 @@
   home = {
     username = "gaiseric";
     homeDirectory = "/home/gaiseric";
+    sessionVariables = {
+      XAUTHORITY = "${config.home.homeDirectory}/.config/xauthority";
+    };
   };
+
+  xdg = {
+    enable = true;
+    cacheHome = "${config.home.homeDirectory}/.cache";
+    dataHome = "${config.home.homeDirectory}/.local/share";
+    configHome = "${config.home.homeDirectory}/.config";
+  };
+
+  gtk.gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
 
   programs = {
     home-manager.enable = true;
     htop.enable = true;
-    git.enable = true;
 
     zoxide = {
       enable = true;
@@ -59,5 +70,6 @@
     ./programs/starship.nix
     ./programs/zsh.nix
     ./programs/git.nix
+    ./programs/helix.nix
   ];
 }
