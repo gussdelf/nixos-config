@@ -4,7 +4,7 @@
   programs.helix = {
     enable = true;
     settings = {
-      theme = "base16_default_dark";
+      theme = "dracula";
       editor = {
         line-number = "relative";
         true-color = true;

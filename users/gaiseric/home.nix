@@ -62,8 +62,9 @@
         };
       };
     };
-
   };
+
+  home.file = { ".config/xrdb".source = ./config/xrdb; };
 
   imports = [
     ./pkgs.nix

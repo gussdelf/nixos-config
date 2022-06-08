@@ -18,6 +18,11 @@
 
       neovim-nightly
       emacs
+
+      exa
+
+      # Dracula
+      dracula-theme
     ];
   };
 }

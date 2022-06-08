@@ -65,6 +65,8 @@
       c = "clear;";
       n = "nnn -e";
       g = "git";
+      la = "exa -la";
+      ls = "exa";
       xx = "chmod +x";
       ww = "wget";
       lz = "lazygit";
