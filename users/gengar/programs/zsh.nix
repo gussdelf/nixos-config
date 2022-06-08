@@ -33,7 +33,6 @@
       XDG_CONFIG_HOME = "$HOME/.config";
       XDG_CACHE_HOME = "$HOME/.cache";
       XDG_DATA_HOME = "$HOME/.local/share";
-      CARGO_HOME = "$XDG_DATA_HOME/cargo";
       GTK_RC_FILES = "$XDG_CONFIG_HOME/gtk-1.0/gtkrc";
       GTK2_RC_FILES = "$XDG_CONFIG_HOME/gtk-2.0/gtkrc";
       _Z_DATA = "$XDG_DATA_HOME/z";
@@ -45,7 +44,6 @@
       TMUX_TMPDIR = "$XDG_RUNTIME_DIR";
       XINITRC = "$XDG_CONFIG_HOME/X11/xinitrc";
       NPM_CONFIG_USERCONFIG = "$XDG_CONFIG_HOME/npm/npmrc";
-      RUSTUP_HOME = "$XDG_DATA_HOME/rustup";
       GEM_HOME = "$XDG_DATA_HOME/gem";
       GEM_SPEC_CACHE = "$XDG_CACHE_HOME/gem";
       GNUPGHOME = "$XDG_DATA_HOME/gnupg";

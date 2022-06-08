@@ -4,6 +4,8 @@
     homeDirectory = "/home/gengar";
     sessionVariables = {
       XAUTHORITY = "${config.home.homeDirectory}/.config/xauthority";
+      RUSTUP_HOME = "${config.home.homeDirectory}/.local/share/rustup";
+      CARGO_HOME = "${config.home.homeDirectory}/.local/share/cargo";
     };
   };
 
