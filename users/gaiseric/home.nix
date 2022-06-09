@@ -72,5 +72,6 @@
     ./programs/zsh.nix
     ./programs/git.nix
     ./programs/helix.nix
+    ./programs/sway.nix
   ];
 }
