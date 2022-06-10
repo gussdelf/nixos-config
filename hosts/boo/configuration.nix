@@ -102,6 +102,7 @@
       gnumake
       nixfmt
       rustup
+      texlive.combined.scheme-full
     ];
   };
 
