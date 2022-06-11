@@ -48,6 +48,8 @@
       mupen64plus
 
       nix-prefetch-github
+
+      obsidian
     ];
   };
 }
