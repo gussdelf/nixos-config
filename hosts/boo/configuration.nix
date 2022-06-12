@@ -88,7 +88,7 @@
       sxhkd
       fd
       go
-      python3
+      python3Full
       unzip
       p7zip
       tmux
