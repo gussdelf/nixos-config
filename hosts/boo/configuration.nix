@@ -90,6 +90,7 @@
       go
       python3Full
       unzip
+      unrar
       p7zip
       tmux
       rsync
@@ -101,6 +102,7 @@
       binutils
       gnumake
       nixfmt
+      nix-prefetch-github
       rustup
       texlive.combined.scheme-full
     ];
