@@ -25,6 +25,9 @@ vim.opt.laststatus = 3
 o.pumheight = 7
 o.pumblend = 0
 
+-- Cmdline
+o.cmdheight = 0
+
 -- Others
 -- o.guicursor = "n-i:blinkon100,v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20"
 o.showmode = false
