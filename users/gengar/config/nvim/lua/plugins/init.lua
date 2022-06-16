@@ -398,6 +398,14 @@ return require("packer").startup {
 						require("plugins.configs.lspconfig").navigator()
 					end,
 				},
+				{
+					"kevinhwang91/nvim-ufo",
+					requires = "kevinhwang91/promise-async",
+					after = "nvim-lspconfig",
+					config = function()
+						require("plugins.configs.lspconfig").ufo()
+					end,
+				},
 			},
 
 			-- nvim-dap

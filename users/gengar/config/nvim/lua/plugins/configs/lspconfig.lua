@@ -57,6 +57,10 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
 		"additionalTextEdits",
 	},
 }
+capabilities.textDocument.foldingRange = {
+	dynamicRegistration = false,
+	lineFoldingOnly = true,
+}
 
 local servers = {
 	"pyright",
@@ -142,6 +146,10 @@ M.navigator = function()
 			},
 		},
 	}
+end
+
+M.ufo = function()
+	require("ufo").setup()
 end
 
 M.go = function()

@@ -39,6 +39,11 @@ g.matchtime = 10
 -- Grep
 o.grepprg = "rg --vimgrep"
 
+-- Folding
+vim.wo.foldcolumn = "1"
+vim.wo.foldlevel = 99
+vim.wo.foldenable = true
+
 -- Others
 o.formatoptions:remove { "c", "r", "o" }
 o.compatible = false

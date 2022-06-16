@@ -12,7 +12,7 @@ o.cursorline = true
 
 -- Chars
 o.listchars = { eol = "↴", tab = "  " }
-o.fillchars = { eob = " " }
+o.fillchars = { eob = " ", fold = " ", foldopen = "", foldsep = " ", foldclose = "" }
 o.list = true
 
 -- signcolumn
