@@ -11,8 +11,9 @@
       nodePackages.typescript-language-server
       nodePackages.vim-language-server
       nodePackages.pyright
-      rust-analyzer
       sumneko-lua-language-server
+      rust-analyzer
+      gopls
       rnix-lsp
 
       jq
