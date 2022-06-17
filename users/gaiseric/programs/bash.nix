@@ -1,7 +1,7 @@
 { config, pkgs, ... }: {
   programs.bash = {
     enable = true;
-    localVariables = {
+    sessionVariables = {
       VISUAL = "emacsclient -nc";
       EDITOR = "nvim";
       LC_CTYPE = "pt_BR.UTF-8";
