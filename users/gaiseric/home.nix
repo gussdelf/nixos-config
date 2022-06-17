@@ -4,6 +4,8 @@
     homeDirectory = "/home/gaiseric";
     sessionVariables = {
       XAUTHORITY = "${config.home.homeDirectory}/.config/xauthority";
+      RUSTUP_HOME = "$XDG_DATA_HOME/rustup";
+      GOPATH = "$XDG_DATA_HOME/go";
     };
   };
 
@@ -69,7 +71,7 @@
   imports = [
     ./pkgs.nix
     ./programs/starship.nix
-    ./programs/zsh.nix
+    ./programs/bash.nix
     ./programs/git.nix
     ./programs/helix.nix
     ./programs/sway.nix

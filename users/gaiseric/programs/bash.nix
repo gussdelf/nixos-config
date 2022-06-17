@@ -1,33 +1,10 @@
 { config, pkgs, ... }: {
-  programs.zsh = {
+  programs.bash = {
     enable = true;
-    enableAutosuggestions = true;
-    enableCompletion = true;
-    enableSyntaxHighlighting = true;
-    autocd = true;
-    defaultKeymap = "viins";
-    dirHashes = {
-      docs = "$HOME/Docs";
-      dl = "$HOME/Files";
-      pj = "$HOME/Projects";
-      rep = "$HOME/Repos";
-    };
-    dotDir = ".config/zsh";
-    history = {
-      ignoreDups = true;
-      extended = true;
-      path = "$HOME/.local/share/zsh/history";
-    };
-    plugins = [{
-      name = "hlissner/zsh-autopair";
-      file = "autopair.zsh";
-      src = fetchGit { url = "https://github.com/hlissner/zsh-autopair.git"; };
-    }];
     localVariables = {
       VISUAL = "emacsclient -nc";
       EDITOR = "nvim";
       LC_CTYPE = "pt_BR.UTF-8";
-      GOPATH = "$XDG_DATA_HOME/go";
       PATH =
         "$HOME/.local/bin:/usr/local/bin:$GOPATH/bin:$HOME/.local/bin:$CARGO_HOME/bin:$XDG_DATA_HOME/npm/bin:$PATH";
       XDG_CONFIG_HOME = "$HOME/.config";
@@ -45,7 +22,6 @@
       TMUX_TMPDIR = "$XDG_RUNTIME_DIR";
       XINITRC = "$XDG_CONFIG_HOME/X11/xinitrc";
       NPM_CONFIG_USERCONFIG = "$XDG_CONFIG_HOME/npm/npmrc";
-      RUSTUP_HOME = "$XDG_DATA_HOME/rustup";
       GEM_HOME = "$XDG_DATA_HOME/gem";
       GEM_SPEC_CACHE = "$XDG_CACHE_HOME/gem";
       GNUPGHOME = "$XDG_DATA_HOME/gnupg";
@@ -94,31 +70,34 @@
       pcomp = "nvim +PackerCompile";
       psync = "nvim +PackerSync";
     };
+    historyFile = "${config.xdg.dataHome}/bash_history";
+    historyFileSize = 100000;
+    shellOptions = [ "histappend" "extglop" "dotglob" "cdspell" ];
     initExtra = ''
-      zstyle ':completion:*' menu select
-      _comp_options+=(globdots)
-      bindkey '^H' backward-delete-char
-      bindkey '^L' autosuggest-accept
-      bindkey '^K' up-line-or-history
-      bindkey '^J' down-line-or-history
-      bindkey '^O' fzf-cd-widget
+      set -o vi
+      PS1="\[\033[35m\]λ \[\033[37m\]\[\033[34m\]\w \[\033[0m\]"
+      PS2="\[\033[32m\]  > \[\033[0m\]"
 
-      function etangle() {
-        emacs --batch --eval "(progn (require 'org) (setq org-confirm-babel-evaluate nil) (org-babel-tangle-file \"$1\"))"
+      extract () {
+        if [ -f $1 ] ; then
+          case $1 in
+            *.tar.bz2)   tar xvjf $1    ;;
+            *.tar.gz)    tar xvzf $1    ;;
+            *.bz2)       bunzip2 $1     ;;
+            *.rar)       unrar x $1       ;;
+            *.gz)        gunzip $1      ;;
+            *.tar)       tar xvf $1     ;;
+            *.tbz2)      tar xvjf $1    ;;
+            *.tgz)       tar xvzf $1    ;;
+            *.zip)       unzip $1       ;;
+            *.Z)         uncompress $1  ;;
+            *.7z)        7z x $1        ;;
+            *)           echo "don't know how to extract '$1'..." ;;
+          esac
+        else
+          echo "'$1' is not a valid file!"
+        fi
       }
-
-      function passs() {
-        pass $1 | xclip -sel clip
-      }
-
-      fuzzy-xdg-open() {
-        local output
-        output=$(fzf --height 50% --reverse </dev/tty) && $EDITOR ''${(q-)output}
-        zle reset-prompt
-      }
-      zle -N fuzzy-xdg-open
-
-      bindkey '^F' fuzzy-xdg-open
     '';
   };
 }
