@@ -40,7 +40,7 @@
 
     fzf = {
       enable = true;
-      enableZshIntegration = true;
+      enableBashIntegration = true;
       defaultCommand = "fd -H -t f";
     };
 
