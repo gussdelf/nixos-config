@@ -68,7 +68,7 @@
 
     gaiseric = {
       isNormalUser = true;
-      shell = pkgs.zsh;
+      shell = pkgs.bash;
       home = "/home/gaiseric";
       extraGroups = [ "wheel" "audio" "adbusers" ];
     };

@@ -72,7 +72,7 @@
     };
     historyFile = "${config.xdg.dataHome}/bash_history";
     historyFileSize = 100000;
-    shellOptions = [ "histappend" "extglop" "dotglob" "cdspell" ];
+    shellOptions = [ "histappend" "extglob" "dotglob" "cdspell" ];
     initExtra = ''
       set -o vi
       PS1="\[\033[35m\]λ \[\033[37m\]\[\033[34m\]\w \[\033[0m\]"
