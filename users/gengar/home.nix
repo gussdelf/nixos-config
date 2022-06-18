@@ -6,6 +6,7 @@
       XAUTHORITY = "${config.home.homeDirectory}/.config/xauthority";
       RUSTUP_HOME = "${config.home.homeDirectory}/.local/share/rustup";
       CARGO_HOME = "${config.home.homeDirectory}/.local/share/cargo";
+      GOPATH = "${config.home.homeDirectory}/.local/share/go";
     };
   };
 
@@ -44,7 +45,7 @@
     ".config/polybar".source = ./config/polybar;
     ".config/sxhkd".source = ./config/sxhkd;
     ".config/bspwm".source = ./config/bspwm;
-    ".config/awesome".source = ./config/awesome;
+    #".config/awesome".source = ./config/awesome;
     ".config/mupen64plus".source = ./config/mupen64plus;
 
     # Wallpapers

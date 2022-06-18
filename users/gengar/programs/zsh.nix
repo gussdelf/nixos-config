@@ -27,7 +27,6 @@
       VISUAL = "emacsclient -nc";
       EDITOR = "nvim";
       LC_CTYPE = "pt_BR.UTF-8";
-      GOPATH = "$XDG_DATA_HOME/go";
       PATH =
         "$HOME/.local/bin:/usr/local/bin:$GOPATH/bin:$HOME/.local/bin:$CARGO_HOME/bin:$XDG_DATA_HOME/npm/bin:$PATH";
       XDG_CONFIG_HOME = "$HOME/.config";

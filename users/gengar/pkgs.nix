@@ -5,6 +5,7 @@
       tdesktop
 
       brave
+      ungoogled-chromium
       librewolf
 
       nodePackages.bash-language-server

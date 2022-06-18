@@ -31,7 +31,6 @@ o.cmdheight = 0
 -- Others
 -- o.guicursor = "n-i:blinkon100,v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20"
 o.showmode = false
-o.guicursor = "a:block"
 o.background = "dark"
 o.splitbelow = true
 o.splitright = true
