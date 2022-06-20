@@ -33,6 +33,7 @@
       bitwarden
       glow
       picom
+      flameshot
 
       feh
       sxiv
