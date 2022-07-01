@@ -13,7 +13,6 @@
     };
   };
 
-  gtk.gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
   home = {
     username = "gengar";
     homeDirectory = "/home/gengar";
@@ -27,6 +26,15 @@
 
   fonts.fontconfig.enable = true;
 
+  gtk = {
+    enable = true;
+    gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
+    cursorTheme = {
+      name = "capitaine-cursors-white";
+      package = pkgs.capitaine-cursors;
+    };
+  };
+
   programs = {
     home-manager.enable = true;
     htop.enable = true;
@@ -34,6 +42,17 @@
     exa.enable = true;
     zathura.enable = true;
     rofi.enable = true;
+  };
+
+  services.flameshot = {
+    enable = true;
+    settings = {
+      General = {
+        disabledTrayIcon = false;
+        showStartupLaunchMessage = false;
+        savePath = config.xdg.userDirs.pictures;
+      };
+    };
   };
 
   home.file = {
