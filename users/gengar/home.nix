@@ -1,15 +1,4 @@
 { config, pkgs, ... }: {
-  home = {
-    username = "gengar";
-    homeDirectory = "/home/gengar";
-    sessionVariables = {
-      XAUTHORITY = "${config.home.homeDirectory}/.config/xauthority";
-      RUSTUP_HOME = "${config.home.homeDirectory}/.local/share/rustup";
-      CARGO_HOME = "${config.home.homeDirectory}/.local/share/cargo";
-      GOPATH = "${config.home.homeDirectory}/.local/share/go";
-    };
-  };
-
   xdg = {
     enable = true;
     cacheHome = "${config.home.homeDirectory}/.cache";
@@ -25,6 +14,17 @@
   };
 
   gtk.gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
+  home = {
+    username = "gengar";
+    homeDirectory = "/home/gengar";
+    sessionVariables = {
+      XAUTHORITY = "${config.xdg.configHome}/Xauthority";
+      RUSTUP_HOME = "${config.xdg.dataHome}/rustup";
+      CARGO_HOME = "${config.xdg.dataHome}/cargo";
+      GOPATH = "${config.xdg.dataHome}/go";
+    };
+  };
+
   fonts.fontconfig.enable = true;
 
   programs = {
