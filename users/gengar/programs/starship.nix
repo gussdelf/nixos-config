@@ -5,17 +5,19 @@
     enableFishIntegration = true;
     settings = {
       add_newline = false;
-      format = lib.concatStrings [ "$character" "$all" ];
+      format =
+        lib.concatStrings [ "$character" "[|](bold bright-black) " "$all" ];
       character = {
-        success_symbol = "[ ](purple)";
-        error_symbol = "[ ](red)";
-        vicmd_symbol = "[ ](green)";
+        success_symbol = "[Δ](purple)";
+        error_symbol = "[Δ](red)";
+        vicmd_symbol = "[Δ](green)";
       };
       directory = {
         read_only = " ";
         style = "blue bold";
         truncation_length = 2;
         truncation_symbol = "…/";
+        disabled = true;
       };
       aws.symbol = "  ";
       conda.symbol = " ";

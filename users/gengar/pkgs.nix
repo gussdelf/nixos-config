@@ -1,6 +1,8 @@
 { config, pkgs, nixpkgs, overlays, ... }: {
   home = {
     packages = with pkgs; [
+      dconf
+
       catgirl
       tdesktop
 

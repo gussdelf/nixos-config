@@ -1,4 +1,7 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+let theme = import ../../../theme/theme.nix { };
+in
+{
   programs = {
     fzf = {
       enable = true;
@@ -6,7 +9,7 @@
       enableZshIntegration = true;
       defaultCommand = "fd -H -t f";
       defaultOptions = [
-        " --color fg:#ebdbb2,hl:#fabd2f,fg+:#ebdbb2,bg+:#3c3836,hl+:#fabd2f\n          --color info:#83a598,prompt:#bdae93,spinner:#fabd2f,pointer:#83a598,marker:#fe8019,header:#665c54"
+        " --color fg:#${theme.colors.c06},hl:#${theme.colors.c0A},fg+:#${theme.colors.c06},bg+:#${theme.colors.c01},hl+:#${theme.colors.c0A}\n          --color info:#${theme.colors.c0D},prompt:#${theme.colors.c04},spinner:#${theme.colors.c0A},pointer:#${theme.colors.c0D},marker:#${theme.colors.c09},header:#${theme.colors.c03}"
       ];
     };
   };

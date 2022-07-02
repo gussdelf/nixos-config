@@ -1,18 +1,21 @@
 { config, nixpkgs, home, overlays, inputs }:
 
 home.lib.homeManagerConfiguration rec {
-  system = "x86_64-linux";
-  username = "gengar";
-  homeDirectory = "/home/${username}";
 
   pkgs = import inputs.nixpkgs {
     system = "x86_64-linux";
     inherit overlays config;
   };
 
-  configuration.imports = [ ./home.nix ];
+  modules = [
+    ./home.nix
+    {
+      home = {
+        username = "gengar";
+        homeDirectory = "/home/gengar";
+        stateVersion = "22.05";
+      };
+    }
+  ];
 
-  extraSpecialArgs = { };
-
-  stateVersion = "22.05";
 }

@@ -112,6 +112,10 @@
         pass $1 | xclip -sel clip
       }
 
+      function run() {
+        nix run nixpkgs#$@
+      }
+
       fuzzy-xdg-open() {
         local output
         output=$(fzf --height 50% --reverse </dev/tty) && $EDITOR ''${(q-)output}

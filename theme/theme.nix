@@ -1,5 +1,5 @@
 _:
 
 rec {
-  color = import ./gruvbox.nix { };
+  colors = import ./gruvbox.nix { };
 }
