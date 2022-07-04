@@ -28,7 +28,7 @@
   };
 
   i18n.defaultLocale = "pt_BR.UTF-8";
-  console = { keyMap = "br-abnt2"; };
+  console = { useXkbConfig = true; };
 
   hardware.opengl = {
     enable = true;
@@ -38,51 +38,73 @@
   services.xserver = {
     enable = true;
     layout = "br";
-    displayManager.startx.enable = true;
+    xkbOptions = "ctrl:swapcaps";
     windowManager.bspwm.enable = true;
     windowManager.awesome.enable = true;
+    displayManager.startx.enable = true;
     videoDrivers = [ "intel" ];
     libinput.enable = true;
   };
 
-  fonts.fonts = with pkgs; [
-    nerdfonts
-    joypixels
-    material-design-icons
-    font-awesome
-  ];
+  fonts = {
+    fonts = with pkgs; [
+      nerdfonts
+      joypixels
+      material-design-icons
+      font-awesome
+    ];
+
+    fontconfig = {
+      enable = true;
+      defaultFonts = { monospace = [ "JetBrainsMono Nerd Font Mono" ]; };
+    };
+  };
 
   sound.enable = true;
-  hardware.pulseaudio.enable = true;
+  # hardware.pulseaudio.enable = true;
 
-  programs.adb.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    pulse.enable = true;
+  };
 
-  users.users = {
+  programs = {
+    adb.enable = true;
+    dconf.enable = true;
+  };
 
-    gengar = {
-      isNormalUser = true;
-      shell = pkgs.zsh;
-      home = "/home/gengar";
-      extraGroups = [ "wheel" "audio" "adbusers" ];
+  systemd.user.services = {
+    pipewire.wantedBy = [ "default.target" ];
+    pipewire-pulse.wantedBy = [ "default.target" ];
+  };
+
+  users = {
+    defaultUserShell = pkgs.zsh;
+
+    users = {
+      gengar = {
+        isNormalUser = true;
+        home = "/home/gengar";
+        extraGroups = [ "wheel" "audio" "adbusers" ];
+      };
+
+      gaiseric = {
+        isNormalUser = true;
+        home = "/home/gaiseric";
+        extraGroups = [ "wheel" "audio" "adbusers" ];
+      };
     };
-
-    gaiseric = {
-      isNormalUser = true;
-      shell = pkgs.bash;
-      home = "/home/gaiseric";
-      extraGroups = [ "wheel" "audio" "adbusers" ];
-    };
-
   };
 
   security.sudo.wheelNeedsPassword = false;
-
-  programs.zsh.enableCompletion = true;
 
   environment = {
     shells = with pkgs; [ zsh ];
     pathsToLink = [ "/share/zsh" ];
     systemPackages = with pkgs; [
+      man-pages
+      man-pages-posix
       zsh
       psmisc
       ripgrep
