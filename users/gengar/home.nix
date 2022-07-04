@@ -16,12 +16,7 @@
   home = {
     username = "gengar";
     homeDirectory = "/home/gengar";
-    sessionVariables = {
-      XAUTHORITY = "${config.xdg.configHome}/Xauthority";
-      RUSTUP_HOME = "${config.xdg.dataHome}/rustup";
-      CARGO_HOME = "${config.xdg.dataHome}/cargo";
-      GOPATH = "${config.xdg.dataHome}/go";
-    };
+    sessionVariables = import ./env.nix { inherit config pkgs; };
   };
 
   fonts.fontconfig.enable = true;

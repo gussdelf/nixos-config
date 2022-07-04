@@ -23,41 +23,7 @@
       file = "autopair.zsh";
       src = fetchGit { url = "https://github.com/hlissner/zsh-autopair.git"; };
     }];
-    localVariables = {
-      VISUAL = "emacsclient -nc";
-      EDITOR = "nvim";
-      LC_CTYPE = "pt_BR.UTF-8";
-      PATH =
-        "$HOME/.local/bin:/usr/local/bin:$GOPATH/bin:$HOME/.local/bin:$CARGO_HOME/bin:$XDG_DATA_HOME/npm/bin:$PATH";
-      XDG_CONFIG_HOME = "$HOME/.config";
-      XDG_CACHE_HOME = "$HOME/.cache";
-      XDG_DATA_HOME = "$HOME/.local/share";
-      GTK_RC_FILES = "$XDG_CONFIG_HOME/gtk-1.0/gtkrc";
-      GTK2_RC_FILES = "$XDG_CONFIG_HOME/gtk-2.0/gtkrc";
-      _Z_DATA = "$XDG_DATA_HOME/z";
-      LESSKEY = "$XDG_CONFIG_HOME/less/lesskey";
-      LESSHISTFILE = "$XDG_CACHE_HOME/less/history";
-      ZDOTDIR = "$HOME/.config/zsh";
-      ANDROID_SDK_HOME = "$XDG_CONFIG_HOME/android";
-      WGETRC = "$XDG_CONFIG_HOME/wgetrc";
-      TMUX_TMPDIR = "$XDG_RUNTIME_DIR";
-      XINITRC = "$XDG_CONFIG_HOME/X11/xinitrc";
-      NPM_CONFIG_USERCONFIG = "$XDG_CONFIG_HOME/npm/npmrc";
-      GEM_HOME = "$XDG_DATA_HOME/gem";
-      GEM_SPEC_CACHE = "$XDG_CACHE_HOME/gem";
-      GNUPGHOME = "$XDG_DATA_HOME/gnupg";
-      TERMINFO = "$XDG_DATA_HOME/terminfo";
-      TERMINFO_DIRS = "$XDG_DATA_HOME/terminfo:/usr/share/terminfo";
-      NODE_REPL_HISTORY = "$XDG_DATA_HOME/node_repl_history";
-      PASSWORD_STORE_DIR = "$XDG_DATA_HOME/pass";
-      SPACEMACSDIR = "$XDG_CONFIG_HOME/spacemacs.d";
-      NOTMUCH_CONFIG = "$XDG_CONFIG_HOME/notmuch/notmuchrc";
-      NMBGIT = "$XDG_DATA_HOME/notmuch/nmbug";
-      ASDF_DATA_DIR = "$XDG_DATA_HOME/asdf";
-      ASDF_CONFIG_FILE = "$XDG_CONFIG_HOME/config/asdf/asdfrc";
-      WLR_NO_HARDWARE_CURSORS = 1;
-      KEYTIMEOUT = 1;
-    };
+    localVariables = { KEYTIMEOUT = 1; };
     shellAliases = {
       c = "clear;";
       n = "nnn -e";
